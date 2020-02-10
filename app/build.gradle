@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion buildVersions.compileSDK
+    buildToolsVersion buildVersions.buildTools
+    defaultConfig {
+        applicationId "com.ziad.funnyjokes"
+        minSdkVersion buildVersions.minSDK
+        targetSdkVersion buildVersions.targestSDK
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libraries.kotlin
+    implementation libraries.coroutines
+
+    implementation libraries.android.appcompact
+    implementation libraries.android.core
+    implementation libraries.android.constraint
+
+    androidTestImplementation libraries.testing.junit
+    androidTestImplementation libraries.testing.testSupport
+
+    api libraries.dagger.dagger
+    annotationProcessor libraries.dagger.daggerCompiler
+}

@@ -1,0 +1,2 @@
+include ':app', ':db'
+rootProject.name='Funny Jokes'
