@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/analytics" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/categories" />
             <option value="$PROJECT_DIR$/db" />
           </set>
         </option>

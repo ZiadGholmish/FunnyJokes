@@ -7,5 +7,6 @@ import com.ziad.db.db.JOKES_CATEGORIES_TABLE_NAME
 @Entity(tableName = JOKES_CATEGORIES_TABLE_NAME)
 class CategoryEntity(
     @PrimaryKey val id: Long,
-    val name: String
+    val name: String,
+    val icon: String
 )

@@ -1,2 +1,2 @@
-include ':app', ':db', ':analytics'
+include ':app', ':db', ':analytics', ':categories'
 rootProject.name='Funny Jokes'
