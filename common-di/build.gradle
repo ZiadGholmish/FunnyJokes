@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -7,7 +7,6 @@ android {
     compileSdkVersion buildVersions.compileSDK
     buildToolsVersion buildVersions.buildTools
     defaultConfig {
-        applicationId "com.ziad.categories"
         minSdkVersion buildVersions.minSDK
         targetSdkVersion buildVersions.targestSDK
         versionCode 1
@@ -27,20 +26,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation libraries.kotlin
-    implementation libraries.coroutines
-
-    androidTestImplementation libraries.testing.junit
-    androidTestImplementation libraries.testing.testSupport
-
     api libraries.dagger.dagger
     annotationProcessor libraries.dagger.daggerCompiler
 
     implementation libraries.android.core
     implementation libraries.android.appcompact
-
-    implementation project(':db')
-    implementation project(':analytics')
-    implementation project(':common-di')
 }

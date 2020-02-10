@@ -1,3 +1,7 @@
 package com.ziad.categories.presentation
 
-class CategoriesVM
+import androidx.lifecycle.ViewModel
+
+class CategoriesVM() : ViewModel() {
+
+}
