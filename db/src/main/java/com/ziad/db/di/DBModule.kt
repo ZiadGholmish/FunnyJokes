@@ -15,7 +15,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class LocalDataModule(private val context: Context) {
+class DBModule(private val context: Context) {
 
     @Singleton
     @Provides

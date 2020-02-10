@@ -9,8 +9,8 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [LocalDataModule::class])
-interface CoreDBComponent {
+@Component(modules = [DBModule::class])
+interface DBComponent {
 
     fun favoriesJokesRepo(): FavoritesJokesRepo
     fun jokesRepo(): JokesRepo
@@ -22,8 +22,8 @@ interface CoreDBComponent {
         @BindsInstance
         fun application(application: Application): Builder
 
-        fun localDataModule(localDataModule: LocalDataModule): Builder
+        fun localDataModule(dbModule: DBModule): Builder
 
-        fun build(): CoreDBComponent
+        fun build(): DBComponent
     }
 }
