@@ -34,9 +34,12 @@ dependencies {
     androidTestImplementation libraries.testing.testSupport
 
     api libraries.dagger.dagger
-    annotationProcessor libraries.dagger.daggerCompiler
+    kapt libraries.dagger.daggerCompiler
+    kapt libraries.dagger.daggerAndroidProcessor
 
     kapt libraries.room.compiler
     implementation libraries.room.runtime
     implementation libraries.room.coroutines
+
+    implementation project(':common-di')
 }

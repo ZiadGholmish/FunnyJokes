@@ -43,8 +43,9 @@ ext {
             ],
 
             dagger    : [
-                    dagger        : "com.google.dagger:dagger:${libVersion.dagger}",
-                    daggerCompiler: "com.google.dagger:dagger-android-processor:${libVersion.daggerCompiler}"
+                    dagger                : "com.google.dagger:dagger:${libVersion.dagger}",
+                    daggerCompiler        : "com.google.dagger:dagger-compiler:${libVersion.dagger}",
+                    daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:${libVersion.daggerCompiler}"
             ],
 
             room      : [
@@ -54,8 +55,8 @@ ext {
                     coroutines: "androidx.room:room-ktx:${libVersion.room}"
             ],
 
-            firebase :[
-                    analytics : "com.google.firebase:firebase-analytics:${libVersion.firebase}"
+            firebase  : [
+                    analytics: "com.google.firebase:firebase-analytics:${libVersion.firebase}"
             ]
 
     ]

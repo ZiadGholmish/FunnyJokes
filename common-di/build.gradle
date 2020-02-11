@@ -28,7 +28,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation libraries.kotlin
     api libraries.dagger.dagger
-    annotationProcessor libraries.dagger.daggerCompiler
+    kapt libraries.dagger.daggerCompiler
+    kapt libraries.dagger.daggerAndroidProcessor
 
     implementation libraries.android.core
     implementation libraries.android.appcompact

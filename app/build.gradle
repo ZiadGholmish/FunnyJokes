@@ -36,5 +36,12 @@ dependencies {
     androidTestImplementation libraries.testing.testSupport
 
     api libraries.dagger.dagger
-    annotationProcessor libraries.dagger.daggerCompiler
+    kapt libraries.dagger.daggerCompiler
+    kapt libraries.dagger.daggerAndroidProcessor
+
+    implementation project(':db')
+    implementation project(':analytics')
+    implementation project(':common-di')
+    implementation project(':db-prepare')
+
 }

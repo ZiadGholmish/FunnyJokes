@@ -12,37 +12,31 @@ import dagger.Provides
 class CategoriesModule {
 
     @Provides
-    @FragmentScope
     internal fun provideCategoriesRepo(categoriesRepo: JokesCategoriesRepo): CategoriesRepo {
         return CategoriesRepoImpl(categoriesRepo)
     }
 
     @Provides
-    @FragmentScope
-    internal fun provideGetCategoryByIdUseCase(categoriesRepo: CategoriesRepo): GetCategoryByIdUseCase {
+     internal fun provideGetCategoryByIdUseCase(categoriesRepo: CategoriesRepo): GetCategoryByIdUseCase {
         return GetCategoryByIdUseCase(categoriesRepo)
     }
 
     @Provides
-    @FragmentScope
     internal fun provideAddCategoryUseCase(categoriesRepo: CategoriesRepo): AddCategoryUseCase {
         return AddCategoryUseCase(categoriesRepo)
     }
 
     @Provides
-    @FragmentScope
     internal fun provideDeleteCategoryUseCase(categoriesRepo: CategoriesRepo): DeleteCategoryUseCase {
         return DeleteCategoryUseCase(categoriesRepo)
     }
 
     @Provides
-    @FragmentScope
     internal fun provideGetAllCategoriesUseCase(categoriesRepo: CategoriesRepo): GetAllCategoriesUseCase {
         return GetAllCategoriesUseCase(categoriesRepo)
     }
 
     @Provides
-    @FragmentScope
     internal fun provideUpdateCategoryUseCase(categoriesRepo: CategoriesRepo): UpdateCategoryUseCase {
         return UpdateCategoryUseCase(categoriesRepo)
     }
