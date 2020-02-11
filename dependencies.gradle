@@ -22,8 +22,11 @@ ext {
             archCore      : '2.1.0',
             room          : '2.2.3',
             timber        : '4.7.1',
-            firebase      : '17.2.2'
+            firebase      : '17.2.2',
+            moshi         : '1.9.2',
+            moshiCodeGen  : '1.6.0'
     ]
+
 
     libraries = [
 
@@ -57,6 +60,11 @@ ext {
 
             firebase  : [
                     analytics: "com.google.firebase:firebase-analytics:${libVersion.firebase}"
+            ]
+            ,
+            moshi     : [
+                    moshi  : "com.squareup.moshi:moshi:${libVersion.moshi}",
+                    codeGen: "com.squareup.moshi:moshi-kotlin-codegen:${libVersion.moshiCodeGen}"
             ]
 
     ]

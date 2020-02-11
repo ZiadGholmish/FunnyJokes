@@ -30,6 +30,9 @@ dependencies {
     implementation libraries.kotlin
     implementation libraries.coroutines
 
+    implementation libraries.moshi.moshi
+    kapt libraries.moshi.codeGen
+
     androidTestImplementation libraries.testing.junit
     androidTestImplementation libraries.testing.testSupport
 
