@@ -4,12 +4,9 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion buildVersions.compileSDK
-    buildToolsVersion buildVersions.buildTools
+
     defaultConfig {
         applicationId "com.ziad.funnyjokes"
-        minSdkVersion buildVersions.minSDK
-        targetSdkVersion buildVersions.targestSDK
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -18,6 +15,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
         }
     }
 }
@@ -32,6 +32,9 @@ dependencies {
     implementation libraries.android.core
     implementation libraries.android.constraint
 
+    implementation libraries.lottie
+
+
     androidTestImplementation libraries.testing.junit
     androidTestImplementation libraries.testing.testSupport
 
@@ -39,9 +42,10 @@ dependencies {
     kapt libraries.dagger.daggerCompiler
     kapt libraries.dagger.daggerAndroidProcessor
 
+    implementation project(':homeactivity')
     implementation project(':db')
     implementation project(':analytics')
     implementation project(':common-di')
     implementation project(':db-prepare')
-    implementation project(':splashfeature')
+
 }

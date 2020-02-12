@@ -3,25 +3,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 android {
-
-    compileSdkVersion buildVersions.compileSDK
-    buildToolsVersion buildVersions.buildTools
-    defaultConfig {
-        minSdkVersion buildVersions.minSDK
-        targetSdkVersion buildVersions.targestSDK
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles 'consumer-rules.pro'
-    }
-
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+        release {}
+        debug {}
     }
-
 }
 
 dependencies {

@@ -14,7 +14,7 @@
             <option value="$PROJECT_DIR$/common-di" />
             <option value="$PROJECT_DIR$/db" />
             <option value="$PROJECT_DIR$/db-prepare" />
-            <option value="$PROJECT_DIR$/splashfeature" />
+            <option value="$PROJECT_DIR$/homeactivity" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

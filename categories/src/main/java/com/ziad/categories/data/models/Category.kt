@@ -3,9 +3,9 @@ package com.ziad.categories.data.models
 import com.ziad.db.entities.CategoryEntity
 
 data class Category(
-    val id: Long,
+    val id: String,
     val title: String,
-    val icon: String
+    val icon: String?
 )
 
 internal fun CategoryEntity.toCategory(): Category {

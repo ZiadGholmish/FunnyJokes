@@ -2,7 +2,6 @@ package com.ziad.categories.di
 
 import androidx.lifecycle.ViewModel
 import com.ziad.categories.presentation.CategoriesVM
-import com.ziad.common_di.FragmentScope
 import com.ziad.common_di.ViewModelKey
 import dagger.Binds
 import dagger.Module

@@ -11,6 +11,8 @@ buildscript {
         classpath "com.android.tools.build:gradle:${libVersion.gradleBuild}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${libVersion.kotlin}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.github.ben-manes:gradle-versions-plugin:0.27.0"
+
     }
 }
 
@@ -18,6 +20,29 @@ allprojects {
     repositories {
         google()
         jcenter()
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            apply plugin: "com.github.ben-manes.versions"
+            android {
+                buildToolsVersion "29.0.2"
+                compileSdkVersion 29
+
+                defaultConfig {
+                    minSdkVersion 21
+                    targetSdkVersion 29
+                    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                }
+
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_1_8
+                    targetCompatibility JavaVersion.VERSION_1_8
+                }
+            }
+        }
     }
 }
 
