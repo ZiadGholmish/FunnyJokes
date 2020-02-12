@@ -8,5 +8,4 @@ interface DbApi {
     fun favoritesJokesRepo(): FavoritesJokesRepo
     fun jokesRepo(): JokesRepo
     fun jokesCategoriesRepo(): JokesCategoriesRepo
-
 }

@@ -2,24 +2,27 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-
 android {
+
     compileSdkVersion buildVersions.compileSDK
     buildToolsVersion buildVersions.buildTools
     defaultConfig {
-        applicationId "com.ziad.funnyjokes"
+        applicationId "com.ziad.splashfeature"
         minSdkVersion buildVersions.minSDK
         targetSdkVersion buildVersions.targestSDK
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -28,10 +31,6 @@ dependencies {
     implementation libraries.kotlin
     implementation libraries.coroutines
 
-    implementation libraries.android.appcompact
-    implementation libraries.android.core
-    implementation libraries.android.constraint
-
     androidTestImplementation libraries.testing.junit
     androidTestImplementation libraries.testing.testSupport
 
@@ -39,9 +38,13 @@ dependencies {
     kapt libraries.dagger.daggerCompiler
     kapt libraries.dagger.daggerAndroidProcessor
 
-    implementation project(':db')
+    implementation libraries.android.core
+    implementation libraries.android.constraint
+    implementation libraries.android.appcompact
+
+    implementation libraries.lottie
+
     implementation project(':analytics')
     implementation project(':common-di')
     implementation project(':db-prepare')
-    implementation project(':splashfeature')
 }

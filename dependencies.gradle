@@ -24,7 +24,8 @@ ext {
             timber        : '4.7.1',
             firebase      : '17.2.2',
             moshi         : '1.9.2',
-            moshiCodeGen  : '1.6.0'
+            moshiCodeGen  : '1.6.0',
+            lottie        : '3.3.0'
     ]
 
 
@@ -66,6 +67,8 @@ ext {
                     moshi  : "com.squareup.moshi:moshi:${libVersion.moshi}",
                     codeGen: "com.squareup.moshi:moshi-kotlin-codegen:${libVersion.moshiCodeGen}"
             ]
+            ,
+            lottie    : "com.airbnb.android:lottie:${libVersion.lottie}"
 
     ]
 
