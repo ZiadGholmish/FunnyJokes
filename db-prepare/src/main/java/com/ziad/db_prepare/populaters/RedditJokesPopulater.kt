@@ -5,6 +5,7 @@ import android.util.Log
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
+import com.ziad.db.entities.CategoryEntity
 import com.ziad.db.entities.JokeEntity
 import com.ziad.db.repo.interfaces.JokesCategoriesRepo
 import com.ziad.db.repo.interfaces.JokesRepo
@@ -18,55 +19,73 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 class RedditJokesPopulater(
-    private val jokesreRepo: JokesRepo,
-    private val jokesCategoriesRepo: JokesCategoriesRepo,
+    private val jokesRepo: JokesRepo,
     private val context: Context
 ) {
 
-    val moshi = Moshi.Builder().build()
+    companion object {
+        private const val SAMPLE_REDDIT_JOKE_ID = "5tz52q"
+    }
 
-    val listType = Types.newParameterizedType(List::class.java, RedditJokeModel::class.java)
-    val adapter: JsonAdapter<List<RedditJokeModel>> = moshi.adapter(listType)
+    private val fileNames = listOf(
+        "reddit_jokes_1.json",
+        "reddit_jokes_2.json",
+        "reddit_jokes_3.json",
+        "reddit_jokes_4.json",
+        "reddit_jokes_5.json",
+        "reddit_jokes_6.json"
+    )
 
-    fun readFileToJoson() {
+    private val moshi by lazy { Moshi.Builder().build() }
+
+    private val listType by lazy {
+        Types.newParameterizedType(
+            List::class.java,
+            RedditJokeModel::class.java
+        )
+    }
+    private val adapter: JsonAdapter<List<RedditJokeModel>> = moshi.adapter(listType)
+
+    suspend fun validateRedditJokes() {
+        if (isJokesSaved()) return
+        saveData()
+    }
+
+    private suspend fun isJokesSaved() = withContext(Dispatchers.IO) {
+        return@withContext jokesRepo.get(SAMPLE_REDDIT_JOKE_ID).isNullOrEmpty().not()
+    }
+
+    private suspend fun saveData() {
         kotlin.runCatching {
-            val jsonString =
-                context.assets
-                    .open("reddit_jokes_1.json")
-                    .bufferedReader()
-                    .use { it.readText() }
-
-            val result = adapter.fromJson(jsonString)
-
-            //now save the jokes
-
-            MainScope().launch {
-                withContext(Dispatchers.IO) {
-                    result?.forEach {
-                        jokesreRepo.insert(
-                            JokeEntity(
-                                id = it.id,
-                                title = it.title,
-                                score = it.score,
-                                body = it.body
-                            )
-                        )
-                    }
-                }
+            fileNames.forEach { fileName ->
+                val jokesResult = parseCurrentList(fileName)
+                saveJokes(jokesResult)
             }
-
-            //check if the data is saved
-            MainScope().launch {
-                withContext(Dispatchers.IO) {
-                 val list =    jokesreRepo.getAll()
-                    Log.e("Jokes saved" , list.size.toString())
-                }
-            }
-
-
         }.getOrElse {
             it.printStackTrace()
         }
+    }
+
+    private suspend fun saveJokes(jokes: List<RedditJokeModel>?) {
+        withContext(Dispatchers.IO) {
+            jokes?.forEach {
+                jokesRepo.insert(
+                    JokeEntity(
+                        id = it.id,
+                        title = it.title,
+                        score = it.score,
+                        body = it.body
+                    )
+                )
+            }
+        }
+    }
+
+    private fun parseCurrentList(fileName: String): List<RedditJokeModel>? {
+        return adapter.fromJson(context.assets
+            .open(fileName)
+            .bufferedReader()
+            .use { it.readText() })
     }
 
 }

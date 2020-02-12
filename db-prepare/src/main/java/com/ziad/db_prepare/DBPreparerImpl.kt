@@ -13,7 +13,7 @@ class DBPreparerImpl(
 ) : DBPreparer {
 
     override suspend fun prepareData(): Boolean {
-        redditJokesPopulater.readFileToJoson()
+        redditJokesPopulater.validateRedditJokes()
         return true
     }
 }
