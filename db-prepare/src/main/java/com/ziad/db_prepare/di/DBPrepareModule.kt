@@ -20,26 +20,22 @@ class DBPrepareModule(private val context: Context) {
     internal fun provideDBPreparer(
         redditJokesPopulater: RedditJokesPopulater,
         wockaPopulater: WockaPopulater,
-        stupidJokesPopulater: StupidJokesPopulater,
-        jokesCategoriesRepo: JokesCategoriesRepo
+        stupidJokesPopulater: StupidJokesPopulater
     ): DBPreparer {
         return DBPreparerImpl(
             redditJokesPopulater,
             wockaPopulater,
-            stupidJokesPopulater,
-            jokesCategoriesRepo
+            stupidJokesPopulater
         )
     }
 
     @Provides
     @ActivityScoped
     internal fun provideRedditJokesPopulater(
-        jokesreRepo: JokesRepo,
-        jokesCategoriesRepo: JokesCategoriesRepo
+        jokesreRepo: JokesRepo
     ): RedditJokesPopulater {
         return RedditJokesPopulater(
             jokesreRepo,
-            jokesCategoriesRepo,
             context
         )
     }
@@ -47,11 +43,11 @@ class DBPrepareModule(private val context: Context) {
     @Provides
     @ActivityScoped
     internal fun provideStupidJokesPopulater(
-        jokesreRepo: JokesRepo,
+        jokesRepo: JokesRepo,
         jokesCategoriesRepo: JokesCategoriesRepo
     ): StupidJokesPopulater {
         return StupidJokesPopulater(
-            jokesreRepo,
+            jokesRepo,
             jokesCategoriesRepo,
             context
         )

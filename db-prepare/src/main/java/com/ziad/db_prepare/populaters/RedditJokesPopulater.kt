@@ -46,7 +46,7 @@ class RedditJokesPopulater(
     }
     private val adapter: JsonAdapter<List<RedditJokeModel>> = moshi.adapter(listType)
 
-    suspend fun validateRedditJokes() {
+    suspend fun validateJokes() {
         if (isJokesSaved()) return
         saveData()
     }

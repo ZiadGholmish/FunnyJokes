@@ -9,8 +9,8 @@ import org.jetbrains.annotations.NotNull
 class JokeEntity(
     @NotNull
     @PrimaryKey val id: String,
-    val title: String,
+    val title: String? = null,
     val score: Int,
-    val body: String,
+    val body: String? = null,
     val category: String? = null
 )
