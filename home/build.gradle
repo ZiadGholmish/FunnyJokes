@@ -20,7 +20,9 @@ dependencies {
     implementation libraries.android.appcompact
     implementation libraries.android.core
     implementation libraries.android.constraint
+    implementation libraries.android.material
 
+    implementation project(':categories')
     implementation project(':db')
     implementation project(':analytics')
     implementation project(':common-di')

@@ -1,4 +1,4 @@
-package com.ziad.homeactivity
+package com.ziad.home
 
 import org.junit.Test
 

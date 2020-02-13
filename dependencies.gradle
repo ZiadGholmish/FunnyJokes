@@ -25,7 +25,8 @@ ext {
             firebase      : '17.2.2',
             moshi         : '1.9.2',
             moshiCodeGen  : '1.6.0',
-            lottie        : '3.3.0'
+            lottie        : '3.3.0',
+            material      : '1.1.0-alpha10'
     ]
 
 
@@ -36,7 +37,8 @@ ext {
             android   : [
                     appcompact: "androidx.appcompat:appcompat:${libVersion.appCompact}",
                     core      : "androidx.core:core-ktx:${libVersion.coreKTX}",
-                    constraint: "androidx.constraintlayout:constraintlayout:${libVersion.constraint}"
+                    constraint: "androidx.constraintlayout:constraintlayout:${libVersion.constraint}",
+                    material  : "com.google.android.material:material:${libVersion.material}"
             ],
 
             coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${libVersion.coroutines}",

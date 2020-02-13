@@ -1,4 +1,4 @@
-package com.ziad.homeactivity
+package com.ziad.home
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

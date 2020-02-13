@@ -1,2 +1,2 @@
-include ':app', ':db', ':analytics', ':categories', ':common-di', ':db-prepare', ':homeactivity', ':actions'
+include ':app', ':db', ':analytics', ':categories', ':common-di', ':db-prepare', ':home', ':actions'
 rootProject.name='Funny Jokes'
