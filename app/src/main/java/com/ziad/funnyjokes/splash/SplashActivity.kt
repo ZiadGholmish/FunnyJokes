@@ -67,4 +67,9 @@ class SplashActivity : AppCompatActivity() {
         withContext(Dispatchers.IO) {
             return@withContext dbPreparer.prepareData()
         }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        (application as FunnyJokesApp).removeSplashComponent()
+    }
 }
