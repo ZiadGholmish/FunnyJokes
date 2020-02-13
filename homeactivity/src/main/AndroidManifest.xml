@@ -5,7 +5,7 @@
     <application android:theme="@style/AppTheme">
         <activity android:name=".HomeActivity">
             <intent-filter>
-                <action android:name="com.jeroenmols.modularization.login.open2"/>
+                <action android:name="com.ziad.funnyjokes.home.open"/>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 

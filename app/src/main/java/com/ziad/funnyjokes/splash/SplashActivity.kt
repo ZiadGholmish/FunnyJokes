@@ -5,6 +5,7 @@ import android.animation.Animator.AnimatorListener
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.ziad.actions.actions.Actions
 import com.ziad.db_prepare.DBPreparer
 import com.ziad.funnyjokes.R
 import com.ziad.funnyjokes.app.FunnyJokesApp
@@ -13,13 +14,18 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
- import javax.inject.Inject
+import javax.inject.Inject
 
 
 class SplashActivity : AppCompatActivity() {
 
     @Inject
     lateinit var dbPreparer: DBPreparer
+
+
+    companion object {
+        private const val LOTTIE_ANIMATION_FILE_NAME = "pumped_up.json"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         inject()
@@ -42,7 +48,7 @@ class SplashActivity : AppCompatActivity() {
     private fun doFinalAnimation() {
         lottieAnimation.apply {
             pauseAnimation()
-            setAnimation("pumped_up.json")
+            setAnimation(LOTTIE_ANIMATION_FILE_NAME)
             repeatCount = 1
             playAnimation()
             addAnimatorListener(object : AnimatorListener {
@@ -51,7 +57,7 @@ class SplashActivity : AppCompatActivity() {
                 }
 
                 override fun onAnimationEnd(animation: Animator) {
-                    startActivity(Intent("com.jeroenmols.modularization.login.open2"))
+                    startActivity(Actions.openHomeIntent(this@SplashActivity))
                 }
 
                 override fun onAnimationCancel(animation: Animator) {

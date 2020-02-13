@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">actions</string>
+    <string name="home_open_action_name">com.ziad.funnyjokes.home.open</string>
+</resources>

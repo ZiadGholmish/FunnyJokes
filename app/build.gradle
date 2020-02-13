@@ -47,5 +47,6 @@ dependencies {
     implementation project(':analytics')
     implementation project(':common-di')
     implementation project(':db-prepare')
+    implementation project(':actions')
 
 }
