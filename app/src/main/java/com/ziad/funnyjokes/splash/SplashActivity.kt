@@ -51,7 +51,7 @@ class SplashActivity : AppCompatActivity() {
                 }
 
                 override fun onAnimationEnd(animation: Animator) {
-                    startActivity(Intent("test.test.test"))
+                    startActivity(Intent("com.jeroenmols.modularization.login.open2"))
                 }
 
                 override fun onAnimationCancel(animation: Animator) {

@@ -42,7 +42,7 @@ dependencies {
     kapt libraries.dagger.daggerCompiler
     kapt libraries.dagger.daggerAndroidProcessor
 
-    implementation project(':homeactivity')
+     implementation project(path:':homeactivity')
     implementation project(':db')
     implementation project(':analytics')
     implementation project(':common-di')
