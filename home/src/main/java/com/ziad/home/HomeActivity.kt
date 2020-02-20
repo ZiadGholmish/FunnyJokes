@@ -1,11 +1,12 @@
 package com.ziad.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ziad.categories.presentation.activity.CategoriesFragment
 import com.ziad.home.di.HomeInjector
+
 
 class HomeActivity : AppCompatActivity() {
     init {
@@ -16,7 +17,14 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.VISIBLE
+        openCategories()
+    }
 
-        val categories = CategoriesFragment.newInstance()
+    private fun openCategories() {
+        supportFragmentManager.beginTransaction().apply {
+            add(R.id.categories, CategoriesFragment.newInstance())
+            commit()
+        }
+
     }
 }
