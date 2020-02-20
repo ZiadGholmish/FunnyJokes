@@ -18,7 +18,7 @@ import dagger.BindsInstance
         DbApi::class,
         AnalyticsApi::class]
 )
-interface AppComponent {
+interface AppComponent : AppComponentInterface {
 
     @Component.Builder
     interface Builder {

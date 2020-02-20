@@ -12,7 +12,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation libraries.kotlin
-    implementation libraries.coroutines
+    implementation libraries.coroutines.core
 
     implementation libraries.moshi.moshi
     kapt libraries.moshi.codeGen

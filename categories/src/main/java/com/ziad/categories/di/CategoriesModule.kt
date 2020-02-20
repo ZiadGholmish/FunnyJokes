@@ -3,7 +3,6 @@ package com.ziad.categories.di
 import com.ziad.categories.data.repo.CategoriesRepoImpl
 import com.ziad.categories.domain.repo.CategoriesRepo
 import com.ziad.categories.domain.usecases.*
-import com.ziad.common_di.FragmentScope
 import com.ziad.db.repo.interfaces.JokesCategoriesRepo
 import dagger.Module
 import dagger.Provides

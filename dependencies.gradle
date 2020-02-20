@@ -26,7 +26,10 @@ ext {
             moshi         : '1.9.2',
             moshiCodeGen  : '1.6.0',
             lottie        : '3.3.0',
-            material      : '1.1.0-alpha10'
+            material      : '1.1.0-alpha10',
+            viewmodelktx  : '2.1.0-beta01',
+            lifecyclektx  : '2.2.0-alpha01',
+            livedataktx   : '2.2.0-alpha01'
     ]
 
 
@@ -41,7 +44,13 @@ ext {
                     material  : "com.google.android.material:material:${libVersion.material}"
             ],
 
-            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${libVersion.coroutines}",
+            coroutines: [
+                    core        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${libVersion.coroutines}",
+                    viewmodelktx: "androidx.lifecycle:lifecycle-viewmodel-ktx:${libVersion.viewmodelktx}",
+                    lifecyclektx: "androidx.lifecycle:lifecycle-runtime-ktx:${libVersion.lifecyclektx}",
+                    livedataktx : "androidx.lifecycle:lifecycle-livedata-ktx:${libVersion.livedataktx}"
+
+            ],
 
             testing   : [
                     junit      : "androidx.test.ext:junit:${libVersion.junit}",

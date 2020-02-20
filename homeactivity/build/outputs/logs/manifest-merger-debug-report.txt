@@ -1,0 +1,43 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:2:1-15:12
+INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:2:1-15:12
+INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:2:1-15:12
+	package
+		ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:3:5-36
+		INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+		INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:5:5-13:19
+	android:theme
+		ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:5:18-49
+activity#com.ziad.homeactivity.HomeActivity
+ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:6:9-12:20
+	android:name
+		ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:6:19-47
+intent-filter#action:name:com.ziad.funnyjokes.home.open+category:name:android.intent.category.DEFAULT
+ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:7:13-10:29
+action#com.ziad.funnyjokes.home.open
+ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:8:17-71
+	android:name
+		ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:8:25-69
+category#android.intent.category.DEFAULT
+ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:9:17-76
+	android:name
+		ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml:9:27-73
+uses-sdk
+INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+		ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+		INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+		ADDED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
+		INJECTED from /Users/personalaccount/data/FunnyJokes/homeactivity/src/main/AndroidManifest.xml
