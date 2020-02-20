@@ -1,24 +1,20 @@
-package com.ziad.categories.di
+package com.ziad.homeactivity.di
 
 import android.app.Application
 import com.ziad.analytics.di.AnalyticsApi
-import com.ziad.common_di.FragmentScope
-import com.ziad.db.di.DbApi
-
+import com.ziad.categories.di.CategoriesApi
+import com.ziad.common_di.ActivityScoped
 import dagger.BindsInstance
 import dagger.Component
 
-@FragmentScope
+@ActivityScoped
 @Component(
-    modules = [
-        CategoriesVMModule::class,
-        CategoriesModule::class],
     dependencies = [
-        DbApi::class,
+        CategoriesApi::class,
         AnalyticsApi::class
     ]
 )
-interface CategoriesComponent : CategoriesApi {
+interface HomeComponent {
 
     @Component.Builder
     interface Builder {
@@ -26,8 +22,8 @@ interface CategoriesComponent : CategoriesApi {
         @BindsInstance
         fun application(application: Application): Builder
 
-        fun dbComponent(dbComponent: DbApi): Builder
+        fun categories(categoriesApi: CategoriesApi): Builder
         fun analyticsComponent(analyticsComponent: AnalyticsApi): Builder
-        fun build(): CategoriesComponent
+        fun build(): HomeComponent
     }
 }
