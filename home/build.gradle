@@ -30,4 +30,5 @@ dependencies {
     implementation project(':analytics')
     implementation project(':common-di')
     implementation project(':categories')
+    implementation project(':injector')
 }

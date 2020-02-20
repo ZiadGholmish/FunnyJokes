@@ -23,6 +23,7 @@ dependencies {
     implementation libraries.android.core
     implementation libraries.android.constraint
     implementation libraries.android.material
+    implementation libraries.android.lifecycleExtension
 
     implementation project(':db')
     implementation project(':analytics')
