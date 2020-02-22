@@ -31,4 +31,5 @@ dependencies {
     implementation project(':common-di')
     implementation project(':categories')
     implementation project(':injector')
+    implementation project(':app-theme')
 }

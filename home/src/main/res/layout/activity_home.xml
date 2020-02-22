@@ -10,21 +10,20 @@
     <FrameLayout
         android:id="@+id/categories"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
+        style="@style/Widget.MaterialComponents.BottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        style="@style/Widget.MaterialComponents.BottomNavigationView"
-        android:background="@android:color/black"
-        app:itemIconTint="@android:color/white"
-        app:itemTextColor="@android:color/white"
+        android:background="@color/white"
+        app:itemIconTint="@color/bottom_navigation_color_state"
+        app:itemTextAppearanceActive="@style/BottomNavigationTextAppearance"
+        app:itemTextColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/home_nav_bar_menu" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

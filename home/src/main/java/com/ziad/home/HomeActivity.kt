@@ -1,14 +1,13 @@
 package com.ziad.home
 
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.app_theme.BaseActivity
 import com.ziad.categories.presentation.activity.CategoriesFragment
 import com.ziad.home.di.HomeInjector
+import kotlinx.android.synthetic.main.activity_home.*
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
     init {
         HomeInjector.initHomeConponent()
     }
@@ -16,7 +15,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.VISIBLE
+        changeStatusBarIconsColor(bottomNavigation)
         openCategories()
     }
 
