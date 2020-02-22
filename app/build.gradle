@@ -26,11 +26,12 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation libraries.kotlin
-    implementation libraries.coroutines
+    implementation libraries.coroutines.core
 
     implementation libraries.android.appcompact
     implementation libraries.android.core
     implementation libraries.android.constraint
+    implementation libraries.android.material
 
     implementation libraries.lottie
 
@@ -42,11 +43,13 @@ dependencies {
     kapt libraries.dagger.daggerCompiler
     kapt libraries.dagger.daggerAndroidProcessor
 
-     implementation project(path:':homeactivity')
+    implementation project(':home')
     implementation project(':db')
     implementation project(':analytics')
     implementation project(':common-di')
     implementation project(':db-prepare')
     implementation project(':actions')
-
+    implementation project(':categories')
+    implementation project(':injector')
+    implementation project(':app-theme')
 }

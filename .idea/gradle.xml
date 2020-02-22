@@ -11,11 +11,13 @@
             <option value="$PROJECT_DIR$/actions" />
             <option value="$PROJECT_DIR$/analytics" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app-theme" />
             <option value="$PROJECT_DIR$/categories" />
             <option value="$PROJECT_DIR$/common-di" />
             <option value="$PROJECT_DIR$/db" />
             <option value="$PROJECT_DIR$/db-prepare" />
-            <option value="$PROJECT_DIR$/homeactivity" />
+            <option value="$PROJECT_DIR$/home" />
+            <option value="$PROJECT_DIR$/injector" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

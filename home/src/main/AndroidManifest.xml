@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ziad.home">
+
+    <application android:theme="@style/AppTheme">
+        <activity android:name="com.ziad.home.HomeActivity">
+            <intent-filter>
+                <action android:name="com.ziad.funnyjokes.home.open" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

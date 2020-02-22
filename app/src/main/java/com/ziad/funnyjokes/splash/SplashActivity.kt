@@ -2,7 +2,6 @@ package com.ziad.funnyjokes.splash
 
 import android.animation.Animator
 import android.animation.Animator.AnimatorListener
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ziad.actions.actions.Actions
@@ -58,6 +57,7 @@ class SplashActivity : AppCompatActivity() {
 
                 override fun onAnimationEnd(animation: Animator) {
                     startActivity(Actions.openHomeIntent(this@SplashActivity))
+                    finish()
                 }
 
                 override fun onAnimationCancel(animation: Animator) {

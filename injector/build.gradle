@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libraries.kotlin
+
+
+    api libraries.dagger.dagger
+    kapt libraries.dagger.daggerCompiler
+    kapt libraries.dagger.daggerAndroidProcessor
+
+    implementation libraries.android.appcompact
+    implementation libraries.android.core
+
+    implementation project(':db')
+    implementation project(':analytics')
+    implementation project(':common-di')
+    implementation project(':db-prepare')
+ }
