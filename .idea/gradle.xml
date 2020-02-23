@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/analytics" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app-theme" />
+            <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/categories" />
             <option value="$PROJECT_DIR$/common-di" />
             <option value="$PROJECT_DIR$/db" />

@@ -1,4 +1,4 @@
-package com.ziad.categories.presentation
+package com.ziad.base
 
 sealed class RequestState {
 

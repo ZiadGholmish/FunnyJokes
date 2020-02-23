@@ -1,11 +1,11 @@
 package com.ziad.categories.presentation.view
 
 import androidx.lifecycle.Observer
-import com.ziad.categories.presentation.AbsPresenter
-import com.ziad.categories.presentation.RequestState
+import com.ziad.base.AbsPresenter
+import com.ziad.base.RequestState
 import javax.inject.Inject
 
-class CategoriesPresenter @Inject constructor() : AbsPresenter<CategoriesController>() {
+class CategoriesPresenter @Inject constructor() : com.ziad.base.AbsPresenter<CategoriesController>() {
 
     var categoriesVM: CategoriesVM? = null
         set(value) {
@@ -33,8 +33,8 @@ class CategoriesPresenter @Inject constructor() : AbsPresenter<CategoriesControl
 
         categoriesVM?.requestState?.observe(mView!!, Observer {
             when (it!!) {
-                is RequestState.Complete -> mView?.hideLoading()
-                is RequestState.Loading -> mView?.showLoading()
+                is com.ziad.base.RequestState.Complete -> mView?.hideLoading()
+                is com.ziad.base.RequestState.Loading -> mView?.showLoading()
             }
         })
     }
