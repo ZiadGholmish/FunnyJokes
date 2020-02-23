@@ -1,4 +1,4 @@
-package com.ziad.categories.presentation.activity
+package com.ziad.categories.presentation.view
 
 import androidx.lifecycle.LifecycleOwner
 import com.ziad.categories.data.models.Category

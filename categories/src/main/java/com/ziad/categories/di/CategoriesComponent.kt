@@ -1,7 +1,7 @@
 package com.ziad.categories.di
 
 import com.ziad.analytics.di.AnalyticsApi
-import com.ziad.categories.presentation.activity.CategoriesFragment
+import com.ziad.categories.presentation.view.CategoriesFragment
 import com.ziad.common_di.FragmentScope
 import com.ziad.db.di.DbApi
 

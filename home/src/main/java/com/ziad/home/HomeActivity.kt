@@ -2,7 +2,7 @@ package com.ziad.home
 
 import android.os.Bundle
 import com.example.app_theme.BaseActivity
-import com.ziad.categories.presentation.activity.CategoriesFragment
+import com.ziad.categories.presentation.view.CategoriesFragment
 import com.ziad.home.di.HomeInjector
 import kotlinx.android.synthetic.main.activity_home.*
 

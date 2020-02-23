@@ -1,4 +1,4 @@
-package com.ziad.categories.presentation.activity
+package com.ziad.categories.presentation.view
 
 import androidx.lifecycle.Observer
 import com.ziad.categories.presentation.AbsPresenter

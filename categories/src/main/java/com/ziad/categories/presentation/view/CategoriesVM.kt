@@ -1,4 +1,4 @@
-package com.ziad.categories.presentation.activity
+package com.ziad.categories.presentation.view
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.ziad.categories.presentation.activity
+package com.ziad.categories.presentation.view
 
 import android.content.Context
 import android.os.Bundle
