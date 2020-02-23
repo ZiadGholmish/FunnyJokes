@@ -1,0 +1,33 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libraries.kotlin
+    implementation libraries.coroutines.core
+    implementation libraries.coroutines.viewmodelktx
+    implementation libraries.coroutines.lifecyclektx
+    implementation libraries.coroutines.livedataktx
+
+    androidTestImplementation libraries.testing.junit
+    androidTestImplementation libraries.testing.testSupport
+
+    api libraries.dagger.dagger
+    kapt libraries.dagger.daggerCompiler
+    kapt libraries.dagger.daggerAndroidProcessor
+
+    implementation libraries.android.appcompact
+    implementation libraries.android.core
+    implementation libraries.android.constraint
+    implementation libraries.android.material
+    implementation libraries.android.lifecycleExtension
+
+    implementation project(':db')
+    implementation project(':analytics')
+    implementation project(':common-di')
+    implementation project(':injector')
+    implementation project(':app-theme')
+}
