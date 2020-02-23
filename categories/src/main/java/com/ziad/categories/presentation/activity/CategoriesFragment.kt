@@ -64,9 +64,10 @@ class CategoriesFragment : Fragment(), CategoriesController {
 
     private fun initRecycler() {
         categoriesRecycler.apply {
-            layoutManager = GridLayoutManager(activity!!, 2).apply {
-                orientation = RecyclerView.VERTICAL
-            }
+            layoutManager = GridLayoutManager(activity!!, 2)
+                .apply {
+                    orientation = RecyclerView.VERTICAL
+                }
             adapter = categoriesAdapter
         }
     }
