@@ -29,7 +29,8 @@ dependencies {
     implementation project(':db')
     implementation project(':analytics')
     implementation project(':common-di')
-    implementation project(':categories')
     implementation project(':injector')
     implementation project(':app-theme')
+    implementation project(':categories')
+    implementation project(':all-jokes')
 }

@@ -2,6 +2,7 @@ package com.ziad.home
 
 import android.os.Bundle
 import com.example.app_theme.BaseActivity
+import com.ziad.all_jokes.presentation.view.JokesFragment
 import com.ziad.categories.presentation.view.CategoriesFragment
 import com.ziad.home.di.HomeInjector
 import kotlinx.android.synthetic.main.activity_home.*
@@ -21,7 +22,7 @@ class HomeActivity : BaseActivity() {
 
     private fun openCategories() {
         supportFragmentManager.beginTransaction().apply {
-            add(R.id.categories, CategoriesFragment.newInstance())
+            add(R.id.categories, JokesFragment.newInstance())
             commit()
         }
 

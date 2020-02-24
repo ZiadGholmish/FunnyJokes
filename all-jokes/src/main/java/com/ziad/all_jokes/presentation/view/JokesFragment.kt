@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ziad.all_jokes.R
 import com.ziad.all_jokes.data.models.Joke
 import com.ziad.all_jokes.di.AlllJokesInjector
+import com.ziad.all_jokes.presentation.view.adapter.JokesAdapter
 import com.ziad.common_di.ViewModelFactory
 import kotlinx.android.synthetic.main.jokes_fragment_layout.*
 import javax.inject.Inject
@@ -27,7 +28,7 @@ class JokesFragment : Fragment(), JokesController {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
-     private val categoriesAdapter = CategoriesAdapter()
+    private val jokesAdapter = JokesAdapter()
 
     companion object {
         fun newInstance(): JokesFragment {
@@ -50,9 +51,9 @@ class JokesFragment : Fragment(), JokesController {
     }
 
     private fun setupPresenterAndVM() {
-        val categoriesVm =
+        val jokesVM =
             ViewModelProviders.of(this, viewModelFactory).get(JokesVM::class.java)
-        mPresenter.categoriesVM = categoriesVm
+        mPresenter.jokesVM = jokesVM
         mPresenter.attachView(this)
     }
 
@@ -67,13 +68,12 @@ class JokesFragment : Fragment(), JokesController {
                 .apply {
                     orientation = RecyclerView.VERTICAL
                 }
-            adapter = categoriesAdapter
+            adapter = jokesAdapter
         }
     }
 
     override fun showJokes(jokes: List<Joke>) {
-        //  categoriesAdapter.submitList(categories)
-
+        jokesAdapter.submitList(jokes)
     }
 
     override fun showEmpty() {
