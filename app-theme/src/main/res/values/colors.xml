@@ -7,4 +7,7 @@
     <color name="dark_shadow">#90000000</color>
     <color name="tab_default">#8B9BB2</color>
     <color name="black">#000000</color>
+    <color name="color_background">#FAFAFA</color>
+    <color name="color_dark">#203152</color>
+    <color name="color_light">#8B9BB2</color>
 </resources>

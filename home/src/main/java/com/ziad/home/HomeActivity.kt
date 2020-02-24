@@ -7,10 +7,14 @@ import com.ziad.categories.presentation.view.CategoriesFragment
 import com.ziad.home.di.HomeInjector
 import kotlinx.android.synthetic.main.activity_home.*
 
-
 class HomeActivity : BaseActivity() {
     init {
         HomeInjector.initHomeConponent()
+    }
+
+    companion object {
+        const val CATEGORIES_FRAGMENT_NAME = "categories_fragment"
+        const val JOKES_FRAGMENT_NAME = "categories_fragment"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +26,8 @@ class HomeActivity : BaseActivity() {
 
     private fun openCategories() {
         supportFragmentManager.beginTransaction().apply {
-            add(R.id.categories, JokesFragment.newInstance())
+            add(R.id.categories, JokesFragment.newInstance(), CATEGORIES_FRAGMENT_NAME)
             commit()
         }
-
     }
 }
