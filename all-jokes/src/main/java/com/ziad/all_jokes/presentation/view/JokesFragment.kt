@@ -22,6 +22,7 @@ class JokesFragment : Fragment(), JokesController {
         AlllJokesInjector.initAllJokesComponent()
     }
 
+
     @Inject
     lateinit var mPresenter: JokesPresenter
 
@@ -31,6 +32,8 @@ class JokesFragment : Fragment(), JokesController {
     private val jokesAdapter = JokesAdapter()
 
     companion object {
+        const val TAGE_NAME = "jokes_fragment"
+
         fun newInstance(): JokesFragment {
             return JokesFragment()
         }
