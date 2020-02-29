@@ -4,9 +4,9 @@
         android:duration="@android:integer/config_mediumAnimTime" />
 
     <translate
-        android:fromYDelta="100"
+        android:fromYDelta="200"
         android:toYDelta="0"
         android:interpolator="@android:anim/accelerate_interpolator"
-        android:duration="200"
+        android:duration="100"
         android:startOffset="0" />
 </set>

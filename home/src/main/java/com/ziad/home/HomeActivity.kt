@@ -22,6 +22,14 @@ class HomeActivity : BaseActivity() {
         setContentView(R.layout.activity_home)
         changeStatusBarIconsColor(bottomNavigation)
         navigationListener()
+        initFragments()
+    }
+
+    private fun initFragments() {
+        supportFragmentManager.beginTransaction().apply {
+            add(R.id.flContent, jokesFragment, JokesFragment.TAGE_NAME)
+            commit()
+        }
     }
 
     private fun navigationListener() {
