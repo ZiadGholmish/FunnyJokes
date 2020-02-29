@@ -3,7 +3,6 @@ package com.ziad.all_jokes.presentation.view
 import androidx.lifecycle.Observer
 import javax.inject.Inject
 
-
 class JokesPresenter @Inject constructor() : com.ziad.base.AbsPresenter<JokesController>() {
 
     var jokesVM: JokesVM? = null

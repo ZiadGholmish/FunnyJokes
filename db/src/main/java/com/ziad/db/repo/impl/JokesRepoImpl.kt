@@ -10,7 +10,7 @@ class JokesRepoImpl(private val jokesDao: JokesDao) : JokesRepo {
     }
 
     override suspend fun getAll(): List<JokeEntity> {
-        return jokesDao.getAll()
+        return jokesDao.getAll().sortedBy { it.score }
     }
 
     override suspend fun insert(jokes: JokeEntity) {

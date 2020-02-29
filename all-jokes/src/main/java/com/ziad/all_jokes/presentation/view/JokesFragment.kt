@@ -22,7 +22,6 @@ class JokesFragment : Fragment(), JokesController {
         AlllJokesInjector.initAllJokesComponent()
     }
 
-
     @Inject
     lateinit var mPresenter: JokesPresenter
 
