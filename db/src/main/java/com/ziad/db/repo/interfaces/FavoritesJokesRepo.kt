@@ -1,11 +1,9 @@
 package com.ziad.db.repo.interfaces
 
-import com.ziad.db.entities.FavoriteJokeEntity
+import com.ziad.db.entities.JokeEntity
 
 interface FavoritesJokesRepo {
-    suspend fun get(id: String): List<FavoriteJokeEntity>
-    suspend fun getAll(): List<FavoriteJokeEntity>
-    suspend fun insert(jokes: FavoriteJokeEntity)
-    suspend fun update(joke: FavoriteJokeEntity)
-    suspend fun delete(joke: FavoriteJokeEntity)
+    suspend fun getAll(): List<JokeEntity>
+    suspend fun fav(jokeId: String)
+    suspend fun unFAv(jokeId: String)
 }

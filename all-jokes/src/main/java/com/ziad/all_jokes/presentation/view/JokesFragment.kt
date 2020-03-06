@@ -12,12 +12,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ziad.all_jokes.R
 import com.ziad.all_jokes.data.models.Joke
 import com.ziad.all_jokes.di.AlllJokesInjector
+import com.ziad.all_jokes.presentation.interfaces.FavoritesInterface
 import com.ziad.all_jokes.presentation.view.adapter.JokesAdapter
 import com.ziad.common_di.ViewModelFactory
 import kotlinx.android.synthetic.main.jokes_fragment_layout.*
 import javax.inject.Inject
 
-class JokesFragment : Fragment(), JokesController {
+class JokesFragment : Fragment(), JokesController, FavoritesInterface {
     init {
         AlllJokesInjector.initAllJokesComponent()
     }
@@ -28,7 +29,7 @@ class JokesFragment : Fragment(), JokesController {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
-    private val jokesAdapter = JokesAdapter()
+    private val jokesAdapter = JokesAdapter(this)
 
     companion object {
         const val TAGE_NAME = "jokes_fragment"
@@ -90,5 +91,15 @@ class JokesFragment : Fragment(), JokesController {
 
     override fun hideLoading() {
         loadingBar.visibility = View.GONE
+    }
+
+    override fun fav(jokeId: String, position: Int) {
+        mPresenter.fav(jokeId)
+        jokesAdapter.notifyItemChanged(position)
+    }
+
+    override fun unFav(jokeId: String, position: Int) {
+        mPresenter.unFav(jokeId)
+        jokesAdapter.notifyItemChanged(position)
     }
 }

@@ -12,8 +12,7 @@ class HomeActivity : BaseActivity() {
     init {
         HomeInjector.initHomeConponent()
     }
-
-
+    
     private val jokesFragment = JokesFragment.newInstance()
     private val categoriesFragment = CategoriesFragment.newInstance()
 

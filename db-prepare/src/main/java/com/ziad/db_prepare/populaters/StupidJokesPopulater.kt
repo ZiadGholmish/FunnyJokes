@@ -65,7 +65,8 @@ class StupidJokesPopulater(
                         id = it.id,
                         score = it.rating.toInt(),
                         body = it.body,
-                        category = it.category
+                        category = it.category ,
+                        isFav = false
                     )
                 )
             }

@@ -37,5 +37,12 @@ class JokesPresenter @Inject constructor() : com.ziad.base.AbsPresenter<JokesCon
         })
     }
 
+    fun fav(jokeId: String) {
+        jokesVM?.fav(jokeId)
+    }
+
+    fun unFav(jokeId: String) {
+        jokesVM?.unFav(jokeId)
+    }
 
 }

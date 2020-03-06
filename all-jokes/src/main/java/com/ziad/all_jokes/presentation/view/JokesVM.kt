@@ -5,17 +5,24 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ziad.all_jokes.data.models.Joke
+import com.ziad.all_jokes.domain.usecases.FavJokeUseCase
 import com.ziad.all_jokes.domain.usecases.GetAllJokesUseCase
+import com.ziad.all_jokes.domain.usecases.UnFavJokeUseCase
 import com.ziad.base.RequestState
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
-class JokesVM @Inject constructor(private val getAllJokesUseCase: GetAllJokesUseCase) :
+class JokesVM @Inject constructor(
+    private val getAllJokesUseCase: GetAllJokesUseCase,
+    private val favJokeUseCase: FavJokeUseCase,
+    private val unFavJokeUseCase: UnFavJokeUseCase
+) :
     ViewModel() {
 
     private val jokesList: MutableLiveData<List<Joke>> = MutableLiveData()
     fun jokes(): LiveData<List<Joke>> = jokesList
+
     val emptyState = MutableLiveData<Boolean>()
     val requestState = MutableLiveData<RequestState>()
 
@@ -29,6 +36,22 @@ class JokesVM @Inject constructor(private val getAllJokesUseCase: GetAllJokesUse
             } else {
                 jokesList.value = cats
             }
+        }
+    }
+
+    fun fav(jokeId: String) {
+        viewModelScope.launch {
+            val updatedList = jokesList.value?.map { it.copy(isFav = true) }
+            jokesList.value = updatedList
+            favJokeUseCase.execute(jokeId)
+        }
+    }
+
+    fun unFav(jokeId: String) {
+        viewModelScope.launch {
+            val updatedList = jokesList.value?.map { it.copy(isFav = false) }
+            jokesList.value = updatedList
+            unFavJokeUseCase.execute(jokeId)
         }
     }
 

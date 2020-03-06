@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/common-di" />
             <option value="$PROJECT_DIR$/db" />
             <option value="$PROJECT_DIR$/db-prepare" />
+            <option value="$PROJECT_DIR$/favorites" />
             <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/injector" />
           </set>

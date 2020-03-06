@@ -7,7 +7,8 @@ data class Joke(
     val title: String? = null,
     val score: Int,
     val body: String? = null,
-    val category: String? = null
+    val category: String? = null,
+    val isFav: Boolean
 )
 
 internal fun JokeEntity.toJoke(): Joke {
@@ -16,7 +17,8 @@ internal fun JokeEntity.toJoke(): Joke {
         title = title,
         score = score,
         body = body,
-        category = category
+        category = category,
+        isFav = isFav
     )
 }
 

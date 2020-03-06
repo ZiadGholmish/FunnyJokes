@@ -63,7 +63,8 @@ class WockaPopulater(
                         id = it.id,
                         score = 0,
                         body = it.body,
-                        category = it.category
+                        category = it.category ,
+                        isFav = false
                     )
                 )
             }
