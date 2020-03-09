@@ -41,16 +41,24 @@ class JokesVM @Inject constructor(
 
     fun fav(jokeId: String) {
         viewModelScope.launch {
-            val updatedList = jokesList.value?.map { it.copy(isFav = true) }
-            jokesList.value = updatedList
+            val updatedList = jokesList.value?.map {
+                if (it.id == jokeId)
+                    return@map it.copy(isFav = true)
+                return@map it
+            }
+            jokesList.postValue(updatedList)
             favJokeUseCase.execute(jokeId)
         }
     }
 
     fun unFav(jokeId: String) {
         viewModelScope.launch {
-            val updatedList = jokesList.value?.map { it.copy(isFav = false) }
-            jokesList.value = updatedList
+            val updatedList = jokesList.value?.map {
+                if (it.id == jokeId)
+                    return@map it.copy(isFav = false)
+                return@map it
+            }
+            jokesList.postValue(updatedList)
             unFavJokeUseCase.execute(jokeId)
         }
     }

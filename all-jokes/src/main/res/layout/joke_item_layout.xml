@@ -7,6 +7,7 @@
     android:layout_marginStart="@dimen/generic_padding"
     android:layout_marginTop="@dimen/jokes_padding"
     android:layout_marginEnd="@dimen/generic_padding"
+    android:clickable="false"
     app:cardBackgroundColor="@android:color/white"
     app:cardCornerRadius="@dimen/card_radius"
     app:cardElevation="@dimen/card_elevation"
@@ -28,7 +29,7 @@
             android:paddingBottom="@dimen/half_padding"
             android:textColor="@color/color_dark"
             android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnFav"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Title will goes here" />
@@ -44,7 +45,7 @@
             android:paddingBottom="@dimen/half_padding"
             android:textColor="@color/color_light"
             android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnFav"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"
             tools:text="body will goes here" />
@@ -54,7 +55,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="@dimen/generic_padding"
-            android:background="@android:color/transparent"
+            android:background="?selectableItemBackground"
             android:src="@drawable/ic_favorite_border_24px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

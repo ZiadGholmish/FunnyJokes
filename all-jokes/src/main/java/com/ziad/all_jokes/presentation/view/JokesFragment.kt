@@ -95,11 +95,9 @@ class JokesFragment : Fragment(), JokesController, FavoritesInterface {
 
     override fun fav(jokeId: String, position: Int) {
         mPresenter.fav(jokeId)
-        jokesAdapter.notifyItemChanged(position)
     }
 
     override fun unFav(jokeId: String, position: Int) {
         mPresenter.unFav(jokeId)
-        jokesAdapter.notifyItemChanged(position)
     }
 }
