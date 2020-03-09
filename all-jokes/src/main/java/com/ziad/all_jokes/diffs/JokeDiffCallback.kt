@@ -9,5 +9,4 @@ object JokeDiffCallback : DiffUtil.ItemCallback<Joke>() {
 
     override fun areContentsTheSame(oldItem: Joke, newItem: Joke) =
         oldItem.title == oldItem.title && oldItem.isFav == newItem.isFav
-
 }
