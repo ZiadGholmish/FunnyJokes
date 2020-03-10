@@ -31,7 +31,7 @@ class CategoriesFragment : Fragment(), CategoriesController {
     private val categoriesAdapter = CategoriesAdapter()
 
     companion object {
-        const val TAGE_NAME = "CATEGORIES_FRAGMENT"
+        const val TAG_NAME = "CATEGORIES_FRAGMENT"
 
         fun newInstance(): CategoriesFragment {
             return CategoriesFragment()

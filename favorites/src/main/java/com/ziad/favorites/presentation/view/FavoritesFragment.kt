@@ -1,4 +1,4 @@
-package com.ziad.all_jokes.presentation.view
+package com.ziad.favorites.presentation.view
 
 import android.content.Context
 import android.os.Bundle
@@ -9,33 +9,34 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.ziad.all_jokes.R
-import com.ziad.all_jokes.data.models.Joke
-import com.ziad.all_jokes.di.AlllJokesInjector
-import com.ziad.all_jokes.presentation.interfaces.FavoritesInterface
-import com.ziad.all_jokes.presentation.view.adapter.JokesAdapter
 import com.ziad.common_di.ViewModelFactory
-import kotlinx.android.synthetic.main.jokes_fragment_layout.*
+import com.ziad.favorites.R
+import com.ziad.favorites.data.models.FavJoke
+import com.ziad.favorites.di.FavsInjector
+import com.ziad.favorites.presentation.adapter.FavsAdapter
+import com.ziad.favorites.presentation.interfaces.FavoritesInterface
+import kotlinx.android.synthetic.main.favs_jokes_fragment_layout.*
 import javax.inject.Inject
 
-class JokesFragment : Fragment(), JokesController, FavoritesInterface {
+class FavoritesFragment : Fragment(), FavsJokesController, FavoritesInterface {
+
     init {
-        AlllJokesInjector.initAllJokesComponent()
+        FavsInjector.initFavoritesComponent()
     }
 
     @Inject
-    lateinit var mPresenter: JokesPresenter
+    lateinit var mPresenterFavs: FavsJokesPresenter
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
-    private val jokesAdapter = JokesAdapter(this)
+    private val jokesAdapter = FavsAdapter(this)
 
     companion object {
-        const val TAG_NAME = "jokes_fragment"
+        const val TAG_NAME = "favs_jokes_fragment"
 
-        fun newInstance(): JokesFragment {
-            return JokesFragment()
+        fun newInstance(): FavoritesFragment {
+            return FavoritesFragment()
         }
     }
 
@@ -44,7 +45,7 @@ class JokesFragment : Fragment(), JokesController, FavoritesInterface {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.jokes_fragment_layout, container, false)
+        return inflater.inflate(R.layout.favs_jokes_fragment_layout, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,13 +56,13 @@ class JokesFragment : Fragment(), JokesController, FavoritesInterface {
 
     private fun setupPresenterAndVM() {
         val jokesVM =
-            ViewModelProviders.of(this, viewModelFactory).get(JokesVM::class.java)
-        mPresenter.jokesVM = jokesVM
-        mPresenter.attachView(this)
+            ViewModelProviders.of(this, viewModelFactory).get(FavsViewModel::class.java)
+        mPresenterFavs.favsVM = jokesVM
+        mPresenterFavs.attachView(this)
     }
 
     override fun onAttach(context: Context) {
-        AlllJokesInjector.allJokesComponent!!.inject(this)
+        FavsInjector.favsJokesComponent!!.inject(this)
         super.onAttach(context)
     }
 
@@ -75,7 +76,7 @@ class JokesFragment : Fragment(), JokesController, FavoritesInterface {
         }
     }
 
-    override fun showJokes(jokes: List<Joke>) {
+    override fun showJokes(jokes: List<FavJoke>) {
         jokesAdapter.submitList(jokes)
     }
 
@@ -94,10 +95,10 @@ class JokesFragment : Fragment(), JokesController, FavoritesInterface {
     }
 
     override fun fav(jokeId: String, position: Int) {
-        mPresenter.fav(jokeId)
+        mPresenterFavs.fav(jokeId)
     }
 
     override fun unFav(jokeId: String, position: Int) {
-        mPresenter.unFav(jokeId)
+        mPresenterFavs.unFav(jokeId)
     }
 }

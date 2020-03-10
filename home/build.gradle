@@ -33,4 +33,5 @@ dependencies {
     implementation project(':app-theme')
     implementation project(':categories')
     implementation project(':all-jokes')
+    implementation project(':favorites')
 }

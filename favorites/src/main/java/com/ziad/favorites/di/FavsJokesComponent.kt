@@ -3,9 +3,9 @@ package com.ziad.favorites.di
 import com.ziad.analytics.di.AnalyticsApi
 import com.ziad.common_di.FragmentScope
 import com.ziad.db.di.DbApi
+import com.ziad.favorites.presentation.view.FavoritesFragment
 import com.ziad.favorites.presentation.view.FavsViewModel
 import dagger.Component
-
 
 @FragmentScope
 @Component(
@@ -18,6 +18,8 @@ import dagger.Component
     ]
 )
 interface FavsJokesComponent : FavsJokesApi {
+
+    fun inject(favoritesFragment: FavoritesFragment)
 
     @Component.Builder
     interface Builder {

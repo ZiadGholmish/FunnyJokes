@@ -12,7 +12,7 @@ object FavsInjector {
         }
         private set
 
-    fun initAllJokesComponent() {
+    fun initFavoritesComponent() {
         favsJokesComponent =
             DaggerFavsJokesComponent
                 .builder()
