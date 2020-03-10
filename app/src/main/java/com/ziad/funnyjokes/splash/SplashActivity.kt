@@ -21,7 +21,6 @@ class SplashActivity : AppCompatActivity() {
     @Inject
     lateinit var dbPreparer: DBPreparer
 
-
     companion object {
         private const val LOTTIE_ANIMATION_FILE_NAME = "pumped_up.json"
     }

@@ -74,7 +74,8 @@ class RedditJokesPopulater(
                         id = it.id,
                         title = it.title,
                         score = it.score,
-                        body = it.body
+                        body = it.body,
+                        isFav = false
                     )
                 )
             }

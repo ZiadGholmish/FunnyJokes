@@ -12,5 +12,6 @@ class JokeEntity(
     val title: String? = null,
     val score: Int,
     val body: String? = null,
-    val category: String? = null
+    val category: String? = null,
+    val isFav: Boolean
 )

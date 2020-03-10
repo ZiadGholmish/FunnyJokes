@@ -17,7 +17,6 @@ import dagger.Provides
 @Module
 class DBModule(private val context: Context) {
 
-
     @Provides
     fun providesDatabase(): JokesDB = Room.databaseBuilder(
         context,
@@ -25,30 +24,24 @@ class DBModule(private val context: Context) {
     )
         .fallbackToDestructiveMigration().build()
 
-
     @Provides
     fun providesJokesCategoriesDao(database: JokesDB) = database.categoryDao()
-
 
     @Provides
     fun providesJokesDao(database: JokesDB) = database.jokesDao()
 
-
     @Provides
     fun providesFavoriesDao(database: JokesDB) = database.favoriesJokesDao()
-
 
     @Provides
     fun provideJokeCategoriesRepo(jokesCategoryDao: CategoryDao): JokesCategoriesRepo {
         return JokesCategoriesRepoImpl(jokesCategoryDao)
     }
 
-
     @Provides
     fun provideJokesRepo(jokesDao: JokesDao): JokesRepo {
         return JokesRepoImpl(jokesDao)
     }
-
 
     @Provides
     fun provideFAvoritesJokesRepo(favoritesJokesDao: FavoritesJokesDao): FavoritesJokesRepo {
