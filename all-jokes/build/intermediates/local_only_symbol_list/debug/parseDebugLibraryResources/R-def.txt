@@ -1,0 +1,10 @@
+R_DEF: Internal format may change without notice
+local
+id btnFav
+id jokesRecycler
+id loadingBar
+id tvBody
+id tvTitle
+layout joke_item_layout
+layout jokes_fragment_layout
+string app_name

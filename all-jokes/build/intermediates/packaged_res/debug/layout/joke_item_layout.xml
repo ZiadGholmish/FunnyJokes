@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/generic_padding"
+    android:layout_marginTop="@dimen/jokes_padding"
+    android:layout_marginEnd="@dimen/generic_padding"
+    android:clickable="false"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="@dimen/card_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:padding="@dimen/generic_padding">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/font_medium"
+            android:gravity="start|center"
+            android:paddingBottom="@dimen/half_padding"
+            android:textColor="@color/color_dark"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/btnFav"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title will goes here" />
+
+        <TextView
+            android:id="@+id/tvBody"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:fontFamily="@font/font_medium"
+            android:gravity="start|center"
+            android:paddingBottom="@dimen/half_padding"
+            android:textColor="@color/color_light"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@id/btnFav"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            tools:text="body will goes here" />
+
+        <ImageButton
+            android:id="@+id/btnFav"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/generic_padding"
+            android:background="?selectableItemBackground"
+            android:src="@drawable/ic_favorite_border_24px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
