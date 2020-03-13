@@ -12,12 +12,4 @@ class FavsJokesRepoImpl(
     override suspend fun getFavs(): List<FavJoke> {
         return favoritesJokesRepo.getAll().map { it.toFav() }
     }
-
-    override suspend fun favJoke(jokeId: String) {
-        favoritesJokesRepo.fav(jokeId)
-    }
-
-    override suspend fun unFAvJoke(jokeId: String) {
-        favoritesJokesRepo.unFAv(jokeId)
-    }
 }

@@ -5,6 +5,7 @@ import com.ziad.common_di.FragmentScope
 import com.ziad.db.di.DbApi
 import com.ziad.favorites.presentation.view.FavoritesFragment
 import com.ziad.favorites.presentation.view.FavsViewModel
+import com.ziad.favorites_core.di.CoreFavoritesApi
 import dagger.Component
 
 @FragmentScope
@@ -14,7 +15,8 @@ import dagger.Component
         ViewModelsModule::class],
     dependencies = [
         DbApi::class,
-        AnalyticsApi::class
+        AnalyticsApi::class,
+        CoreFavoritesApi::class
     ]
 )
 interface FavsJokesComponent : FavsJokesApi {
@@ -25,6 +27,7 @@ interface FavsJokesComponent : FavsJokesApi {
     interface Builder {
         fun dbComponent(dbComponent: DbApi): Builder
         fun analyticsComponent(analyticsComponent: AnalyticsApi): Builder
+        fun favoritesCore(coreFavoritesApi: CoreFavoritesApi): Builder
         fun build(): FavsJokesComponent
     }
 }

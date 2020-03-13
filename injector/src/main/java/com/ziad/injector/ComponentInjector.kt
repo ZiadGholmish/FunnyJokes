@@ -10,6 +10,8 @@ import com.ziad.db.di.DaggerDBComponent
 import com.ziad.db_prepare.di.DBPrepareComponent
 import com.ziad.db_prepare.di.DBPrepareModule
 import com.ziad.db_prepare.di.DaggerDBPrepareComponent
+import com.ziad.favorites_core.di.CoreFavoritesComponent
+import com.ziad.favorites_core.di.DaggerCoreFavoritesComponent
 import java.lang.IllegalStateException
 
 object ComponentInjector {
@@ -39,10 +41,19 @@ object ComponentInjector {
         private set
 
 
+    var coreFavsComponent: CoreFavoritesComponent? = null
+        get() {
+            if (field == null)
+                throw IllegalStateException("CoreFavoritesComponent component should be initialized first")
+            return field
+        }
+        private set
+
     fun initCoreModules(application: Context) {
         initDbComponent(application)
         initAnalyticsModule(application)
         initDbPrepareModule(application)
+        initCoreFavsComponent(application)
     }
 
     private fun initDbComponent(application: Context) {
@@ -64,6 +75,13 @@ object ComponentInjector {
             .builder()
             .dbComponent(dbComponent!!)
             .dbPrepareModule(DBPrepareModule(application))
+            .build()
+    }
+
+    private fun initCoreFavsComponent(application: Context) {
+        coreFavsComponent = DaggerCoreFavoritesComponent
+            .builder()
+            .dbComponent(dbComponent!!)
             .build()
     }
 

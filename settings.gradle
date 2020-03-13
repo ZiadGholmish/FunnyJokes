@@ -2,3 +2,4 @@ include ':app', ':db', ':analytics', ':categories', ':common-di', ':db-prepare',
         ':actions', ':injector', ':app-theme'
 rootProject.name='Funny Jokes'
 include ':favorites'
+include ':favorites-core'

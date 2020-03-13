@@ -18,6 +18,7 @@ object AlllJokesInjector {
                 .builder()
                 .analyticsComponent(ComponentInjector.analyticComponent!!)
                 .dbComponent(ComponentInjector.dbComponent!!)
+                .favoritesCore(ComponentInjector.coreFavsComponent!!)
                 .build()
     }
 }

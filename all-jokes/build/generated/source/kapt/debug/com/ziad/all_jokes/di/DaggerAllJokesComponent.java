@@ -3,9 +3,7 @@ package com.ziad.all_jokes.di;
 
 import androidx.lifecycle.ViewModel;
 import com.ziad.all_jokes.domain.repo.JokesRepository;
-import com.ziad.all_jokes.domain.usecases.FavJokeUseCase;
 import com.ziad.all_jokes.domain.usecases.GetAllJokesUseCase;
-import com.ziad.all_jokes.domain.usecases.UnFavJokeUseCase;
 import com.ziad.all_jokes.presentation.view.JokesFragment;
 import com.ziad.all_jokes.presentation.view.JokesFragment_MembersInjector;
 import com.ziad.all_jokes.presentation.view.JokesPresenter;
@@ -14,8 +12,10 @@ import com.ziad.all_jokes.presentation.view.JokesVM_Factory;
 import com.ziad.analytics.di.AnalyticsApi;
 import com.ziad.common_di.ViewModelFactory;
 import com.ziad.db.di.DbApi;
-import com.ziad.db.repo.interfaces.FavoritesJokesRepo;
 import com.ziad.db.repo.interfaces.JokesRepo;
+import com.ziad.favorites_core.di.CoreFavoritesApi;
+import com.ziad.favorites_core.usecases.FavJokeUseCase;
+import com.ziad.favorites_core.usecases.UnFavJokeUseCase;
 import dagger.internal.Preconditions;
 import java.util.Collections;
 import java.util.Map;
@@ -28,22 +28,20 @@ import javax.inject.Provider;
 public final class DaggerAllJokesComponent implements AllJokesComponent {
   private Provider<JokesRepo> jokesRepoProvider;
 
-  private Provider<FavoritesJokesRepo> favoritesJokesRepoProvider;
-
   private Provider<JokesRepository> provideJokesRepo$all_jokes_debugProvider;
 
   private Provider<GetAllJokesUseCase> provideGetAllJokes$all_jokes_debugProvider;
 
-  private Provider<FavJokeUseCase> provideFavJoke$all_jokes_debugProvider;
+  private Provider<FavJokeUseCase> favUseCaseProvider;
 
-  private Provider<UnFavJokeUseCase> provideUnFavJoke$all_jokes_debugProvider;
+  private Provider<UnFavJokeUseCase> unFavUseCaseProvider;
 
   private Provider<JokesVM> jokesVMProvider;
 
   private DaggerAllJokesComponent(AllJokesModule allJokesModuleParam, DbApi dbApiParam,
-      AnalyticsApi analyticsApi) {
+      AnalyticsApi analyticsApi, CoreFavoritesApi coreFavoritesApiParam) {
 
-    initialize(allJokesModuleParam, dbApiParam, analyticsApi);
+    initialize(allJokesModuleParam, dbApiParam, analyticsApi, coreFavoritesApiParam);
   }
 
   public static AllJokesComponent.Builder builder() {
@@ -59,14 +57,13 @@ public final class DaggerAllJokesComponent implements AllJokesComponent {
 
   @SuppressWarnings("unchecked")
   private void initialize(final AllJokesModule allJokesModuleParam, final DbApi dbApiParam,
-      final AnalyticsApi analyticsApi) {
+      final AnalyticsApi analyticsApi, final CoreFavoritesApi coreFavoritesApiParam) {
     this.jokesRepoProvider = new com_ziad_db_di_DbApi_jokesRepo(dbApiParam);
-    this.favoritesJokesRepoProvider = new com_ziad_db_di_DbApi_favoritesJokesRepo(dbApiParam);
-    this.provideJokesRepo$all_jokes_debugProvider = AllJokesModule_ProvideJokesRepo$all_jokes_debugFactory.create(allJokesModuleParam, jokesRepoProvider, favoritesJokesRepoProvider);
+    this.provideJokesRepo$all_jokes_debugProvider = AllJokesModule_ProvideJokesRepo$all_jokes_debugFactory.create(allJokesModuleParam, jokesRepoProvider);
     this.provideGetAllJokes$all_jokes_debugProvider = AllJokesModule_ProvideGetAllJokes$all_jokes_debugFactory.create(allJokesModuleParam, provideJokesRepo$all_jokes_debugProvider);
-    this.provideFavJoke$all_jokes_debugProvider = AllJokesModule_ProvideFavJoke$all_jokes_debugFactory.create(allJokesModuleParam, provideJokesRepo$all_jokes_debugProvider);
-    this.provideUnFavJoke$all_jokes_debugProvider = AllJokesModule_ProvideUnFavJoke$all_jokes_debugFactory.create(allJokesModuleParam, provideJokesRepo$all_jokes_debugProvider);
-    this.jokesVMProvider = JokesVM_Factory.create(provideGetAllJokes$all_jokes_debugProvider, provideFavJoke$all_jokes_debugProvider, provideUnFavJoke$all_jokes_debugProvider);
+    this.favUseCaseProvider = new com_ziad_favorites_core_di_CoreFavoritesApi_favUseCase(coreFavoritesApiParam);
+    this.unFavUseCaseProvider = new com_ziad_favorites_core_di_CoreFavoritesApi_unFavUseCase(coreFavoritesApiParam);
+    this.jokesVMProvider = JokesVM_Factory.create(provideGetAllJokes$all_jokes_debugProvider, favUseCaseProvider, unFavUseCaseProvider);
   }
 
   @Override
@@ -84,6 +81,8 @@ public final class DaggerAllJokesComponent implements AllJokesComponent {
 
     private AnalyticsApi analyticsApi;
 
+    private CoreFavoritesApi coreFavoritesApi;
+
     @Override
     public Builder dbComponent(DbApi dbComponent) {
       this.dbApi = Preconditions.checkNotNull(dbComponent);
@@ -97,10 +96,17 @@ public final class DaggerAllJokesComponent implements AllJokesComponent {
     }
 
     @Override
+    public Builder favoritesCore(CoreFavoritesApi coreFavoritesApi) {
+      this.coreFavoritesApi = Preconditions.checkNotNull(coreFavoritesApi);
+      return this;
+    }
+
+    @Override
     public AllJokesComponent build() {
       Preconditions.checkBuilderRequirement(dbApi, DbApi.class);
       Preconditions.checkBuilderRequirement(analyticsApi, AnalyticsApi.class);
-      return new DaggerAllJokesComponent(new AllJokesModule(), dbApi, analyticsApi);
+      Preconditions.checkBuilderRequirement(coreFavoritesApi, CoreFavoritesApi.class);
+      return new DaggerAllJokesComponent(new AllJokesModule(), dbApi, analyticsApi, coreFavoritesApi);
     }
   }
 
@@ -117,16 +123,29 @@ public final class DaggerAllJokesComponent implements AllJokesComponent {
     }
   }
 
-  private static class com_ziad_db_di_DbApi_favoritesJokesRepo implements Provider<FavoritesJokesRepo> {
-    private final DbApi dbApi;
+  private static class com_ziad_favorites_core_di_CoreFavoritesApi_favUseCase implements Provider<FavJokeUseCase> {
+    private final CoreFavoritesApi coreFavoritesApi;
 
-    com_ziad_db_di_DbApi_favoritesJokesRepo(DbApi dbApi) {
-      this.dbApi = dbApi;
+    com_ziad_favorites_core_di_CoreFavoritesApi_favUseCase(CoreFavoritesApi coreFavoritesApi) {
+      this.coreFavoritesApi = coreFavoritesApi;
     }
 
     @Override
-    public FavoritesJokesRepo get() {
-      return Preconditions.checkNotNull(dbApi.favoritesJokesRepo(), "Cannot return null from a non-@Nullable component method");
+    public FavJokeUseCase get() {
+      return Preconditions.checkNotNull(coreFavoritesApi.favUseCase(), "Cannot return null from a non-@Nullable component method");
+    }
+  }
+
+  private static class com_ziad_favorites_core_di_CoreFavoritesApi_unFavUseCase implements Provider<UnFavJokeUseCase> {
+    private final CoreFavoritesApi coreFavoritesApi;
+
+    com_ziad_favorites_core_di_CoreFavoritesApi_unFavUseCase(CoreFavoritesApi coreFavoritesApi) {
+      this.coreFavoritesApi = coreFavoritesApi;
+    }
+
+    @Override
+    public UnFavJokeUseCase get() {
+      return Preconditions.checkNotNull(coreFavoritesApi.unFavUseCase(), "Cannot return null from a non-@Nullable component method");
     }
   }
 }

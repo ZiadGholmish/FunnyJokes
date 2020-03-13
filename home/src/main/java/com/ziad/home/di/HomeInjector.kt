@@ -5,15 +5,14 @@ import java.lang.IllegalStateException
 
 object HomeInjector {
 
-    var homeComponent: HomeComponent? = null
+    private var homeComponent: HomeComponent? = null
         get() {
             if (field == null)
                 throw IllegalStateException("home component should be initialized first")
             return field
         }
-        private set
 
-    fun initHomeConponent() {
+    fun initHomeComponent() {
         homeComponent =
             DaggerHomeComponent
                 .builder()

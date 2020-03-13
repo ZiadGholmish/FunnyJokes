@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 class HomeActivity : BaseActivity() {
 
     init {
-        HomeInjector.initHomeConponent()
+        HomeInjector.initHomeComponent()
     }
 
     private val jokesFragment = JokesFragment.newInstance()
@@ -55,7 +55,6 @@ class HomeActivity : BaseActivity() {
         }
     }
 
-
     private fun switchToFavs() {
         supportFragmentManager.beginTransaction().apply {
             addAnimation()
@@ -86,7 +85,6 @@ class HomeActivity : BaseActivity() {
             } else {
                 show(fragment)
             }
-
             commit()
         }
     }

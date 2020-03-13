@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ziad.base.RequestState
 import com.ziad.favorites.data.models.FavJoke
-import com.ziad.favorites.domain.usecases.FavJokeUseCase
 import com.ziad.favorites.domain.usecases.GetFavsJokesUseCase
-import com.ziad.favorites.domain.usecases.UnFavJokeUseCase
+import com.ziad.favorites_core.usecases.FavJokeUseCase
+import com.ziad.favorites_core.usecases.UnFavJokeUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

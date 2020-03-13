@@ -5,10 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ziad.all_jokes.data.models.Joke
-import com.ziad.all_jokes.domain.usecases.FavJokeUseCase
 import com.ziad.all_jokes.domain.usecases.GetAllJokesUseCase
-import com.ziad.all_jokes.domain.usecases.UnFavJokeUseCase
 import com.ziad.base.RequestState
+import com.ziad.favorites_core.usecases.FavJokeUseCase
+import com.ziad.favorites_core.usecases.UnFavJokeUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

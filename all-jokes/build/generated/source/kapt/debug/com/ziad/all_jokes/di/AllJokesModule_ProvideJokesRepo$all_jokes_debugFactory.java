@@ -2,7 +2,6 @@
 package com.ziad.all_jokes.di;
 
 import com.ziad.all_jokes.domain.repo.JokesRepository;
-import com.ziad.db.repo.interfaces.FavoritesJokesRepo;
 import com.ziad.db.repo.interfaces.JokesRepo;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
@@ -17,29 +16,24 @@ public final class AllJokesModule_ProvideJokesRepo$all_jokes_debugFactory implem
 
   private final Provider<JokesRepo> jokesRepoProvider;
 
-  private final Provider<FavoritesJokesRepo> favoritesJokesRepoProvider;
-
   public AllJokesModule_ProvideJokesRepo$all_jokes_debugFactory(AllJokesModule module,
-      Provider<JokesRepo> jokesRepoProvider,
-      Provider<FavoritesJokesRepo> favoritesJokesRepoProvider) {
+      Provider<JokesRepo> jokesRepoProvider) {
     this.module = module;
     this.jokesRepoProvider = jokesRepoProvider;
-    this.favoritesJokesRepoProvider = favoritesJokesRepoProvider;
   }
 
   @Override
   public JokesRepository get() {
-    return provideJokesRepo$all_jokes_debug(module, jokesRepoProvider.get(), favoritesJokesRepoProvider.get());
+    return provideJokesRepo$all_jokes_debug(module, jokesRepoProvider.get());
   }
 
   public static AllJokesModule_ProvideJokesRepo$all_jokes_debugFactory create(AllJokesModule module,
-      Provider<JokesRepo> jokesRepoProvider,
-      Provider<FavoritesJokesRepo> favoritesJokesRepoProvider) {
-    return new AllJokesModule_ProvideJokesRepo$all_jokes_debugFactory(module, jokesRepoProvider, favoritesJokesRepoProvider);
+      Provider<JokesRepo> jokesRepoProvider) {
+    return new AllJokesModule_ProvideJokesRepo$all_jokes_debugFactory(module, jokesRepoProvider);
   }
 
   public static JokesRepository provideJokesRepo$all_jokes_debug(AllJokesModule instance,
-      JokesRepo jokesRepo, FavoritesJokesRepo favoritesJokesRepo) {
-    return Preconditions.checkNotNull(instance.provideJokesRepo$all_jokes_debug(jokesRepo, favoritesJokesRepo), "Cannot return null from a non-@Nullable @Provides method");
+      JokesRepo jokesRepo) {
+    return Preconditions.checkNotNull(instance.provideJokesRepo$all_jokes_debug(jokesRepo), "Cannot return null from a non-@Nullable @Provides method");
   }
 }
