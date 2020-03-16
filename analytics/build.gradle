@@ -25,4 +25,5 @@ dependencies {
     implementation libraries.firebase.analytics
 
     implementation project(':common-di')
+    implementation project(':actions')
 }

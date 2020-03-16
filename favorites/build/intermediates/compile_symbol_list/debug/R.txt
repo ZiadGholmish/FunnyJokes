@@ -1918,6 +1918,7 @@ int string exposed_dropdown_menu_content_description 0x0
 int string fab_transformation_scrim_behavior 0x0
 int string fab_transformation_sheet_behavior 0x0
 int string hide_bottom_view_on_scroll_behavior 0x0
+int string home_open_action_name 0x0
 int string icon_content_description 0x0
 int string mtrl_badge_numberless_content_description 0x0
 int string mtrl_chip_close_icon_content_description 0x0
@@ -2176,7 +2177,8 @@ int style Base_Widget_MaterialComponents_PopupMenu_Overflow 0x0
 int style Base_Widget_MaterialComponents_TextInputEditText 0x0
 int style Base_Widget_MaterialComponents_TextInputLayout 0x0
 int style Base_Widget_MaterialComponents_TextView 0x0
-int style BottomNavigationTextAppearance 0x0
+int style BottomNavigationTextAppearanceActive 0x0
+int style BottomNavigationTextAppearanceInActive 0x0
 int style CardView 0x0
 int style CardView_Dark 0x0
 int style CardView_Light 0x0

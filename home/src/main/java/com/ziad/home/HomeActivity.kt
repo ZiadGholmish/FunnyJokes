@@ -3,6 +3,7 @@ package com.ziad.home
 import android.os.Bundle
 import androidx.fragment.app.FragmentTransaction
 import com.example.app_theme.BaseActivity
+import com.ziad.actions.actions.Actions
 import com.ziad.all_jokes.presentation.view.JokesFragment
 import com.ziad.categories.presentation.view.CategoriesFragment
 import com.ziad.favorites.presentation.view.FavoritesFragment
@@ -104,6 +105,8 @@ class HomeActivity : BaseActivity() {
             }
 
             commit()
+
+
         }
     }
 

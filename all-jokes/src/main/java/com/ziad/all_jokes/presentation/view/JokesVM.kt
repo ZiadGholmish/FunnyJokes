@@ -26,10 +26,10 @@ class JokesVM @Inject constructor(
     val emptyState = MutableLiveData<Boolean>()
     val requestState = MutableLiveData<RequestState>()
 
-    fun getJokes() {
+    fun getJokes(category: String?) {
         viewModelScope.launch {
             requestState.value = RequestState.Loading
-            val cats = getAllJokesUseCase.execute()
+            val cats = getAllJokesUseCase.execute(category = category)
             requestState.value = RequestState.Complete
             if (cats.isNullOrEmpty()) {
                 emptyState.value = true

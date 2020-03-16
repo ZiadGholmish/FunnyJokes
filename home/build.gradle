@@ -34,4 +34,5 @@ dependencies {
     implementation project(':categories')
     implementation project(':all-jokes')
     implementation project(':favorites')
+    implementation project(':actions')
 }

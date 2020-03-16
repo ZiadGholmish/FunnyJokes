@@ -12,6 +12,9 @@ interface JokesDao {
     @Query("SELECT * FROM $JOKES_TABLE_NAME")
     suspend fun getAll(): List<JokeEntity>
 
+    @Query("SELECT * FROM $JOKES_TABLE_NAME WHERE category = :category")
+    suspend fun getAllByCategory(category: String): List<JokeEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(jokes: JokeEntity)
 

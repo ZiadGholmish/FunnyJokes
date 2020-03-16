@@ -44,12 +44,12 @@ dependencies {
     kapt libraries.dagger.daggerAndroidProcessor
 
     implementation project(':home')
+    implementation project(':category-jokes')
     implementation project(':db')
     implementation project(':analytics')
     implementation project(':common-di')
     implementation project(':db-prepare')
     implementation project(':actions')
-    implementation project(':categories')
     implementation project(':injector')
     implementation project(':app-theme')
 }

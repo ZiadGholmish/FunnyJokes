@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/app-theme" />
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/categories" />
+            <option value="$PROJECT_DIR$/category-jokes" />
             <option value="$PROJECT_DIR$/common-di" />
             <option value="$PROJECT_DIR$/db" />
             <option value="$PROJECT_DIR$/db-prepare" />

@@ -6,13 +6,9 @@ import javax.inject.Inject
 class JokesPresenter @Inject constructor() : com.ziad.base.AbsPresenter<JokesController>() {
 
     var jokesVM: JokesVM? = null
-        set(value) {
-            field = value
-            getJokes()
-        }
 
-    private fun getJokes() {
-        jokesVM?.getJokes()
+      fun getJokes(category: String?) {
+        jokesVM?.getJokes(category= category)
     }
 
     override fun setObservers() {

@@ -4,4 +4,5 @@ import com.ziad.all_jokes.data.models.Joke
 
 interface JokesRepository {
     suspend fun getJokes(): List<Joke>
+    suspend fun getAllByCategory(category: String): List<Joke>
 }

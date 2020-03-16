@@ -55,7 +55,7 @@ class SplashActivity : AppCompatActivity() {
                 }
 
                 override fun onAnimationEnd(animation: Animator) {
-                    startActivity(Actions.openHomeIntent(this@SplashActivity))
+                    startActivity(Actions.openHomeIntent())
                     finish()
                 }
 

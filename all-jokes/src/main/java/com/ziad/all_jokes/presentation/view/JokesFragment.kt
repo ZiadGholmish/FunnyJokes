@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ziad.actions.actions.Actions
 import com.ziad.all_jokes.R
 import com.ziad.all_jokes.data.models.Joke
 import com.ziad.all_jokes.di.AlllJokesInjector
@@ -34,8 +35,12 @@ class JokesFragment : Fragment(), JokesController, FavoritesInterface {
     companion object {
         const val TAG_NAME = "jokes_fragment"
 
-        fun newInstance(): JokesFragment {
-            return JokesFragment()
+
+        fun newInstance(category: String? = null): JokesFragment {
+            val bundle = Bundle().apply {
+                putString(Actions.CATEGORY, category)
+            }
+            return JokesFragment().apply { arguments = bundle }
         }
     }
 
@@ -57,6 +62,7 @@ class JokesFragment : Fragment(), JokesController, FavoritesInterface {
         val jokesVM =
             ViewModelProviders.of(this, viewModelFactory).get(JokesVM::class.java)
         mPresenter.jokesVM = jokesVM
+        mPresenter.getJokes(arguments?.getString(Actions.CATEGORY))
         mPresenter.attachView(this)
     }
 

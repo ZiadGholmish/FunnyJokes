@@ -1,17 +1,21 @@
 package com.ziad.actions.actions
 
-import android.content.Context
 import android.content.Intent
-import android.util.Log
 
 object Actions {
-    fun openHomeIntent(context: Context? = null) =
+
+    const val CATEGORY = "category"
+
+    fun openHomeIntent() =
         internalIntent(
-            context,
             "com.ziad.funnyjokes.home.open"
         )
 
-    private fun internalIntent(context: Context?, action: String): Intent {
+    fun openCategoryJokes(category: String) = internalIntent("com.ziad.category_jokes.open").apply {
+        putExtra(CATEGORY, category)
+    }
+
+    private fun internalIntent(action: String): Intent {
         return Intent(action)
     }
 

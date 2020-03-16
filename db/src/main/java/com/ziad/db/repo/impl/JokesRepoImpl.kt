@@ -13,6 +13,11 @@ class JokesRepoImpl(private val jokesDao: JokesDao) : JokesRepo {
         return jokesDao.getAll().sortedBy { it.score }
     }
 
+    override suspend fun getAllByCategory(category: String): List<JokeEntity> {
+        return jokesDao.getAllByCategory(category = category).sortedBy { it.score }
+
+    }
+
     override suspend fun insert(jokes: JokeEntity) {
         return jokesDao.insert(jokes)
     }

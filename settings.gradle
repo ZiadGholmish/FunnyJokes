@@ -1,5 +1,3 @@
 include ':app', ':db', ':analytics', ':categories', ':common-di', ':db-prepare', ':home', ':all-jokes', ':base',
-        ':actions', ':injector', ':app-theme'
+        ':actions', ':injector', ':app-theme' , ':favorites' , ':favorites-core' , ':category-jokes'
 rootProject.name='Funny Jokes'
-include ':favorites'
-include ':favorites-core'

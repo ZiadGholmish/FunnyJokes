@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libraries.kotlin
+
+    implementation libraries.android.appcompact
+    implementation libraries.android.core
+    implementation libraries.android.constraint
+    implementation libraries.android.material
+    implementation libraries.android.lifecycleExtension
+
+    implementation project(':all-jokes')
+    implementation project(':actions')
+    implementation project(':app-theme')
+
+}
