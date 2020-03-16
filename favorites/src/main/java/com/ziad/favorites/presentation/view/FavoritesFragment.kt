@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieDrawable.RESTART
+import com.airbnb.lottie.animation.content.RepeaterContent
 import com.ziad.common_di.ViewModelFactory
 import com.ziad.favorites.R
 import com.ziad.favorites.data.models.FavJoke
@@ -34,7 +36,6 @@ class FavoritesFragment : Fragment(), FavsJokesController, FavoritesInterface {
 
     companion object {
         const val TAG_NAME = "favs_jokes_fragment"
-
         fun newInstance(): FavoritesFragment {
             return FavoritesFragment()
         }
@@ -52,6 +53,7 @@ class FavoritesFragment : Fragment(), FavsJokesController, FavoritesInterface {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
         setupPresenterAndVM()
+        setupSwipeLayout()
     }
 
     private fun setupPresenterAndVM() {
@@ -81,17 +83,24 @@ class FavoritesFragment : Fragment(), FavsJokesController, FavoritesInterface {
     }
 
     override fun showEmpty() {
+        lottieAnimation.visibility = View.VISIBLE
+        tvEmpty.visibility = View.VISIBLE
+        lottieAnimation.repeatMode = RESTART
+        lottieAnimation.playAnimation()
     }
 
     override fun hideEmpty() {
+        lottieAnimation.visibility = View.GONE
+        tvEmpty.visibility = View.GONE
+        lottieAnimation.pauseAnimation()
     }
 
     override fun showLoading() {
-        loadingBar.visibility = View.VISIBLE
+        swipeLayout.isRefreshing = true
     }
 
     override fun hideLoading() {
-        loadingBar.visibility = View.GONE
+        swipeLayout.isRefreshing = false
     }
 
     override fun fav(jokeId: String, position: Int) {
@@ -100,5 +109,11 @@ class FavoritesFragment : Fragment(), FavsJokesController, FavoritesInterface {
 
     override fun unFav(jokeId: String, position: Int) {
         mPresenterFavs.unFav(jokeId)
+    }
+
+    private fun setupSwipeLayout() {
+        swipeLayout.setOnRefreshListener {
+            mPresenterFavs.getJokes()
+        }
     }
 }

@@ -11,7 +11,7 @@ class FavsJokesPresenter @Inject constructor() : com.ziad.base.AbsPresenter<Favs
             getJokes()
         }
 
-    private fun getJokes() {
+    fun getJokes() {
         favsVM?.getFavs()
     }
 

@@ -93,8 +93,8 @@ class HomeActivity : BaseActivity() {
         supportFragmentManager.beginTransaction().apply {
             addAnimation()
 
-            hide(categoriesFragment)
             hide(favoritesFragment)
+            hide(categoriesFragment)
 
             val fragment = supportFragmentManager.findFragmentByTag(JokesFragment.TAG_NAME)
             if (fragment == null) {

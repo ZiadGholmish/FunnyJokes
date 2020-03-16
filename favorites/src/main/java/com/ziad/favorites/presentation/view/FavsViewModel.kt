@@ -30,11 +30,8 @@ class FavsViewModel @Inject constructor(
             requestState.value = RequestState.Loading
             val cats = favsJokesUseCase.execute()
             requestState.value = RequestState.Complete
-            if (cats.isNullOrEmpty()) {
-                emptyState.value = true
-            } else {
-                jokesList.value = cats
-            }
+            emptyState.value = cats.isNullOrEmpty()
+            jokesList.value = cats
         }
     }
 

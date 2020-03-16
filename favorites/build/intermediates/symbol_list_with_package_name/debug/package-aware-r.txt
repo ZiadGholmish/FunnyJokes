@@ -495,6 +495,22 @@ attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
 attr logo
 attr logoDescription
+attr lottie_autoPlay
+attr lottie_cacheComposition
+attr lottie_colorFilter
+attr lottie_enableMergePathsForKitKatAndAbove
+attr lottie_fallbackRes
+attr lottie_fileName
+attr lottie_imageAssetsFolder
+attr lottie_loop
+attr lottie_progress
+attr lottie_rawRes
+attr lottie_renderMode
+attr lottie_repeatCount
+attr lottie_repeatMode
+attr lottie_scale
+attr lottie_speed
+attr lottie_url
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogTheme
 attr materialAlertDialogTitleIconStyle
@@ -1498,6 +1514,7 @@ id adjust_width
 id alertTitle
 id async
 id auto
+id automatic
 id blocking
 id bottom
 id btnFav
@@ -1542,6 +1559,7 @@ id forever
 id ghost_view
 id gone
 id group_divider
+id hardware
 id home
 id icon
 id icon_group
@@ -1560,7 +1578,8 @@ id line1
 id line3
 id listMode
 id list_item
-id loadingBar
+id lottieAnimation
+id lottie_layer_name
 id masked
 id message
 id mini
@@ -1610,6 +1629,8 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id restart
+id reverse
 id right
 id right_icon
 id right_side
@@ -1640,6 +1661,7 @@ id slide
 id smallLabel
 id snackbar_action
 id snackbar_text
+id software
 id spacer
 id split_action_bar
 id spread
@@ -1652,6 +1674,7 @@ id start
 id stretch
 id submenuarrow
 id submit_area
+id swipeLayout
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -1685,6 +1708,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tvBody
+id tvEmpty
 id tvTitle
 id unchecked
 id uniform
@@ -1833,6 +1857,18 @@ string abc_activity_chooser_view_see_all
 string abc_activitychooserview_choose_application
 string abc_capital_off
 string abc_capital_on
+string abc_font_family_body_1_material
+string abc_font_family_body_2_material
+string abc_font_family_button_material
+string abc_font_family_caption_material
+string abc_font_family_display_1_material
+string abc_font_family_display_2_material
+string abc_font_family_display_3_material
+string abc_font_family_display_4_material
+string abc_font_family_headline_material
+string abc_font_family_menu_material
+string abc_font_family_subhead_material
+string abc_font_family_title_material
 string abc_menu_alt_shortcut_label
 string abc_menu_ctrl_shortcut_label
 string abc_menu_delete_shortcut_label
@@ -1916,6 +1952,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string once_you_like_a_joke_it_will_be_appear_here
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2649,6 +2686,7 @@ styleable LinearLayoutCompat android_baselineAligned android_baselineAlignedChil
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_height android_layout_weight android_layout_width
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable LottieAnimationView lottie_autoPlay lottie_cacheComposition lottie_colorFilter lottie_enableMergePathsForKitKatAndAbove lottie_fallbackRes lottie_fileName lottie_imageAssetsFolder lottie_loop lottie_progress lottie_rawRes lottie_renderMode lottie_repeatCount lottie_repeatMode lottie_scale lottie_speed lottie_url
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
 styleable MaterialButton android_checkable android_insetBottom android_insetLeft android_insetRight android_insetTop backgroundTint backgroundTintMode cornerRadius elevation icon iconGravity iconPadding iconSize iconTint iconTintMode rippleColor shapeAppearance shapeAppearanceOverlay strokeColor strokeWidth
