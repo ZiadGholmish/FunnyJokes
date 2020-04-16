@@ -3,9 +3,13 @@
     package="com.ziad.category_jokes">
 
     <application android:theme="@style/AppTheme">
-        <activity android:name="com.ziad.category_jokes.CategoryJokesActivity">
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login"></activity>
+        <activity android:name=".CategoryJokesActivity">
             <intent-filter>
                 <action android:name="com.ziad.category_jokes.open" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

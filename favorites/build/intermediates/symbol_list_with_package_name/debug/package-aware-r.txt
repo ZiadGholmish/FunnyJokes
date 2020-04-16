@@ -1407,6 +1407,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_arrow_back_black_24dp
 drawable ic_calendar_black_24dp
 drawable ic_category_24px
 drawable ic_clear_black_24dp

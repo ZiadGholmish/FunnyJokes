@@ -1406,6 +1406,7 @@ int drawable design_password_eye 0x0
 int drawable design_snackbar_background 0x0
 int drawable googleg_disabled_color_18 0x0
 int drawable googleg_standard_color_18 0x0
+int drawable ic_arrow_back_black_24dp 0x0
 int drawable ic_calendar_black_24dp 0x0
 int drawable ic_category_24px 0x0
 int drawable ic_clear_black_24dp 0x0
