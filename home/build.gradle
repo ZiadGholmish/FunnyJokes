@@ -12,6 +12,11 @@ dependencies {
     implementation libraries.coroutines.lifecyclektx
     implementation libraries.coroutines.livedataktx
 
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
     androidTestImplementation libraries.testing.junit
     androidTestImplementation libraries.testing.testSupport
 
@@ -35,4 +40,16 @@ dependencies {
     implementation project(':all-jokes')
     implementation project(':favorites')
     implementation project(':actions')
+}
+
+android {
+    // To inline the bytecode built with JVM target 1.8 into
+    // bytecode that is being built with JVM target 1.6. (e.g. navArgs)
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }

@@ -13,11 +13,17 @@ class CategoryJokesActivity : BaseActivity() {
         supportFragmentManager.beginTransaction().apply {
             add(
                 R.id.frameLayout,
-                JokesFragment.newInstance(intent.getStringExtra(Actions.CATEGORY)),
+                JokesFragment.newInstance(
+                    intent.getStringExtra(Actions.CATEGORY)
+                ),
                 JokesFragment.TAG_NAME
             )
             commit()
         }
+        setTitle()
+    }
 
+    private fun setTitle() {
+        title = intent.getStringExtra(Actions.CATEGORY_NAME)
     }
 }

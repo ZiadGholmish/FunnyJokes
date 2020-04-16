@@ -3,9 +3,10 @@
     package="com.ziad.home">
 
     <application android:theme="@style/AppTheme">
-        <activity android:name="com.ziad.home.HomeActivity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="com.ziad.funnyjokes.home.open" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

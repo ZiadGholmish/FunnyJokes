@@ -11,7 +11,12 @@ class CategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(category: Category) {
         itemView.tvCategoryTitle.text = category.title
         itemView.setOnClickListener {
-            itemView.context.startActivity(Actions.openCategoryJokes(category = category.id))
+            itemView.context.startActivity(
+                Actions.openCategoryJokes(
+                    category = category.id,
+                    categoryName = category.title
+                )
+            )
         }
     }
 }

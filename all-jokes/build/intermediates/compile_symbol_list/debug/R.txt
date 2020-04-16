@@ -1012,6 +1012,7 @@ int dimen abc_text_size_subhead_material 0x0
 int dimen abc_text_size_subtitle_material_toolbar 0x0
 int dimen abc_text_size_title_material 0x0
 int dimen abc_text_size_title_material_toolbar 0x0
+int dimen action_bar_height 0x0
 int dimen action_bar_size 0x0
 int dimen activity_margin 0x0
 int dimen appcompat_dialog_background_inset 0x0

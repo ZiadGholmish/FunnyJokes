@@ -68,7 +68,6 @@ class HomeActivity : BaseActivity() {
             } else {
                 show(fragment)
             }
-
             commit()
         }
     }
@@ -105,8 +104,6 @@ class HomeActivity : BaseActivity() {
             }
 
             commit()
-
-
         }
     }
 

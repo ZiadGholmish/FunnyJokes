@@ -1029,6 +1029,7 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen action_bar_height
 dimen action_bar_size
 dimen activity_margin
 dimen appcompat_dialog_background_inset
