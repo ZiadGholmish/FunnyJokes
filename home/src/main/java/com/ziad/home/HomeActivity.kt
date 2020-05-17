@@ -65,10 +65,10 @@ class HomeActivity : BaseActivity() {
             val fragment = supportFragmentManager.findFragmentByTag(FavoritesFragment.TAG_NAME)
             if (fragment == null) {
                 add(R.id.flContent, favoritesFragment, FavoritesFragment.TAG_NAME)
-            } else {
-                show(fragment)
+
             }
-            commit()
+            show(favoritesFragment)
+            commitAllowingStateLoss()
         }
     }
 
@@ -82,10 +82,9 @@ class HomeActivity : BaseActivity() {
             val fragment = supportFragmentManager.findFragmentByTag(CategoriesFragment.TAG_NAME)
             if (fragment == null) {
                 add(R.id.flContent, categoriesFragment, CategoriesFragment.TAG_NAME)
-            } else {
-                show(fragment)
             }
-            commit()
+            show(categoriesFragment)
+            commitAllowingStateLoss()
         }
     }
 
@@ -99,11 +98,9 @@ class HomeActivity : BaseActivity() {
             val fragment = supportFragmentManager.findFragmentByTag(JokesFragment.TAG_NAME)
             if (fragment == null) {
                 add(R.id.flContent, jokesFragment, JokesFragment.TAG_NAME)
-            } else {
-                show(fragment)
             }
-
-            commit()
+            show(jokesFragment)
+            commitAllowingStateLoss()
         }
     }
 

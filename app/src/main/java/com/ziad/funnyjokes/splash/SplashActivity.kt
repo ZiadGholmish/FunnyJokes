@@ -38,8 +38,8 @@ class SplashActivity : AppCompatActivity() {
 
     private fun checkData() {
         MainScope().launch {
-            saveDataOrUpdate()
             doFinalAnimation()
+            saveDataOrUpdate()
         }
     }
 
