@@ -20,11 +20,9 @@ class CategoriesVM @Inject constructor(private val getAllCategoriesUseCase: GetA
 
     fun getCategories() {
         viewModelScope.launch {
-            requestState.value =
-                com.ziad.base.RequestState.Loading
+            requestState.value = RequestState.Loading
             val cats = getAllCategoriesUseCase.execute()
-            requestState.value =
-                com.ziad.base.RequestState.Complete
+            requestState.value = RequestState.Complete
             if (cats.isNullOrEmpty()) {
                 emptyState.value = true
             } else {
