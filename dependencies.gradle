@@ -12,7 +12,7 @@ ext {
             gradleBuild       : '3.6.1',
             dagger            : '2.26',
             daggerCompiler    : '2.26',
-            junit             : '1.1.1',
+            androidJunit      : '1.1.1',
             espressoCore      : '3.2.0',
             appCompact        : '1.1.0',
             coreKTX           : '1.1.0',
@@ -31,7 +31,8 @@ ext {
             lifecyclektx      : '2.2.0-alpha01',
             livedataktx       : '2.2.0-alpha01',
             lifecycleExtension: '2.1.0',
-            swipeRefreshLayout: '1.0.0'
+            swipeRefreshLayout: '1.0.0',
+            mockito           : '1.10.19'
     ]
 
 
@@ -57,8 +58,11 @@ ext {
             ],
 
             testing   : [
-                    junit      : "androidx.test.ext:junit:${libVersion.junit}",
-                    testSupport: "androidx.test.espresso:espresso-core:${libVersion.espressoCore}"
+                    androidJunit   : "androidx.test.ext:junit:${libVersion.androidJunit}",
+                    testSupport    : "androidx.test.espresso:espresso-core:${libVersion.espressoCore}",
+                    mockito        : "org.mockito:mockito-core:${libVersion.mockito}",
+                    junit          : "junit:junit:4.12",
+                    androidTestCore: "androidx.test:core:1.0.0",
             ],
 
             dagger    : [
