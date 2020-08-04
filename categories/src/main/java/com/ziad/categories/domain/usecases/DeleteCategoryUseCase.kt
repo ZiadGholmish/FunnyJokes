@@ -5,4 +5,3 @@ import com.ziad.categories.domain.repo.CategoriesRepo
 
 class DeleteCategoryUseCase(private val categoriesRepo: CategoriesRepo) {
     suspend fun execute(category: Category) = categoriesRepo.delete(category = category)
-}
