@@ -8,8 +8,8 @@ import com.ziad.categories.domain.repo.CategoriesRepo
 
 class DeleteCategoryUseCase(private val categoriesRepo: CategoriesRepo) {
     suspend fun execute(category: Category): ResultModel<Unit> {
-        categoriesRepo.delete(category = category).let { deletedCount ->
-            return if (deletedCount > 0) {
+        return categoriesRepo.delete(category = category).let { deletedCount ->
+            if (deletedCount > 0) {
                 Success(Unit)
             } else {
                 Failure("category is not there to delete")
