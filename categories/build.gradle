@@ -19,6 +19,7 @@ dependencies {
     testImplementation libraries.testing.mockito
     testImplementation libraries.testing.androidTestCore
     testImplementation libraries.coroutines.testing
+    testImplementation libraries.testing.mockitoKotlin
 
     api libraries.dagger.dagger
     kapt libraries.dagger.daggerCompiler

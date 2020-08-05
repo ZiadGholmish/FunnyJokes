@@ -7,5 +7,5 @@ interface JokesCategoriesRepo {
     suspend fun getAll(): List<CategoryEntity>
     suspend fun insert(category: CategoryEntity)
     suspend fun update(category: CategoryEntity)
-    suspend fun delete(category: CategoryEntity)
+    suspend fun delete(category: CategoryEntity): Int
 }

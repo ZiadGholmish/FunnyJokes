@@ -1,6 +1,5 @@
 package com.ziad.categories.di
 
-import com.ziad.categories.data.models.Category
 import com.ziad.categories.data.repo.CategoriesRepoImpl
 import com.ziad.categories.domain.policies.CategoryValidator
 import com.ziad.categories.domain.repo.CategoriesRepo

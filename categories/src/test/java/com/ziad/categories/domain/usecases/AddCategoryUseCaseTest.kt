@@ -5,14 +5,13 @@ import com.ziad.base.Success
 import com.ziad.categories.data.models.Category
 import com.ziad.categories.domain.policies.CategoryValidator
 import com.ziad.categories.domain.repo.CategoriesRepo
-import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Test
+import org.junit.Assert.assertEquals
 
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.Mockito.*
 import org.mockito.runners.MockitoJUnitRunner
 

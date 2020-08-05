@@ -9,7 +9,7 @@ ext {
 
     libVersion = [
             kotlin            : '1.3.61',
-            gradleBuild       : '3.6.1',
+            gradleBuild       : '4.0.0',
             dagger            : '2.26',
             daggerCompiler    : '2.26',
             androidJunit      : '1.1.1',
@@ -64,6 +64,7 @@ ext {
                     mockito        : "org.mockito:mockito-core:${libVersion.mockito}",
                     junit          : "junit:junit:4.12",
                     androidTestCore: "androidx.test:core:1.0.0",
+                    mockitoKotlin : "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
             ],
 
             dagger    : [

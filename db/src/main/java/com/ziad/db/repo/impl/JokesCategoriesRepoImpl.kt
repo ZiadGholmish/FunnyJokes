@@ -21,7 +21,7 @@ class JokesCategoriesRepoImpl(private val jokeCategoryDao: CategoryDao) : JokesC
         return jokeCategoryDao.update(category)
     }
 
-    override suspend fun delete(category: CategoryEntity) {
+    override suspend fun delete(category: CategoryEntity): Int {
         return jokeCategoryDao.delete(category)
     }
 }
