@@ -12,11 +12,10 @@ class AddCategoryUseCase(
     private val categoryValidator: CategoryValidator
 ) {
 
-    suspend fun execute(category: Category): ResultModel<Unit> {
-        return if (categoryValidator.validate(category = category)) {
+    suspend fun execute(category: Category): ResultModel<Unit> =
+        if (categoryValidator.validate(category = category)) {
             Success(categoriesRepo.insert(category = category))
         } else {
             Failure("Category is not valid")
         }
-    }
 }

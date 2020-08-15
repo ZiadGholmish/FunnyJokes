@@ -7,7 +7,7 @@ import com.ziad.categories.data.models.Category
 import com.ziad.categories.domain.repo.CategoriesRepo
 
 class GetCategoryByIdUseCase(private val categoriesRepo: CategoriesRepo) {
-    suspend fun execute(id: String): ResultModel<Category> {
+    suspend fun execute(id: String): ResultModel<Category> =
         categoriesRepo.get(id = id).let { categories ->
             return if (categories.isNotEmpty()) {
                 Success(categories[0])
@@ -15,5 +15,4 @@ class GetCategoryByIdUseCase(private val categoriesRepo: CategoriesRepo) {
                 Failure("There is no category for this $id")
             }
         }
-    }
 }

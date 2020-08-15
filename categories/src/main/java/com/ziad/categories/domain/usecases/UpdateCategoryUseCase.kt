@@ -7,7 +7,7 @@ import com.ziad.categories.data.models.Category
 import com.ziad.categories.domain.repo.CategoriesRepo
 
 class UpdateCategoryUseCase(private val categoriesRepo: CategoriesRepo) {
-    suspend fun execute(category: Category): ResultModel<Unit> {
+    suspend fun execute(category: Category): ResultModel<Unit> =
         categoriesRepo.update(category = category).let { count ->
             return if (count > 0) {
                 Success(Unit)
@@ -15,5 +15,4 @@ class UpdateCategoryUseCase(private val categoriesRepo: CategoriesRepo) {
                 Failure("There is no activity available to update")
             }
         }
-    }
 }
