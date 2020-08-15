@@ -21,17 +21,17 @@ class CategoriesVM @Inject constructor(private val getAllCategoriesUseCase: GetA
     fun getCategories() {
         viewModelScope.launch {
             requestState.value = RequestState.Loading
-            getAllCategoriesUseCase.execute().apply {
-                when (this) {
+            getAllCategoriesUseCase.execute().let { result ->
+                when (result) {
                     is Success<List<Category>> -> {
-                        if (this.data.isNullOrEmpty()) {
+                        if (result.data.isNullOrEmpty()) {
                             emptyState.value = true
                         } else {
-                            categoriesList.value = this.data
+                            categoriesList.value = result.data
                         }
                     }
                     is Failure -> {
-                        errorState.value = this
+                        errorState.value = result
                     }
                 }
             }
