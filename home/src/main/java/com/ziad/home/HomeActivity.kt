@@ -65,7 +65,6 @@ class HomeActivity : BaseActivity() {
             val fragment = supportFragmentManager.findFragmentByTag(FavoritesFragment.TAG_NAME)
             if (fragment == null) {
                 add(R.id.flContent, favoritesFragment, FavoritesFragment.TAG_NAME)
-
             }
             show(favoritesFragment)
             commitAllowingStateLoss()
