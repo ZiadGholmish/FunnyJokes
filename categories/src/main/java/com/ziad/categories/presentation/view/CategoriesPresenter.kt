@@ -5,7 +5,8 @@ import com.ziad.base.AbsPresenter
 import com.ziad.base.RequestState
 import javax.inject.Inject
 
-class CategoriesPresenter @Inject constructor() : com.ziad.base.AbsPresenter<CategoriesController>() {
+class CategoriesPresenter @Inject constructor() :
+    com.ziad.base.AbsPresenter<CategoriesController>() {
 
     var categoriesVM: CategoriesVM? = null
         set(value) {
@@ -33,8 +34,8 @@ class CategoriesPresenter @Inject constructor() : com.ziad.base.AbsPresenter<Cat
 
         categoriesVM?.requestState?.observe(mView!!, Observer {
             when (it!!) {
-                is com.ziad.base.RequestState.Complete -> mView?.hideLoading()
-                is com.ziad.base.RequestState.Loading -> mView?.showLoading()
+                is RequestState.Complete -> mView?.hideLoading()
+                is RequestState.Loading -> mView?.showLoading()
             }
         })
     }

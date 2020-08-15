@@ -1,7 +1,5 @@
 package com.ziad.categories.domain.usecases
 
-import com.nhaarman.mockitokotlin2.doReturn
-import com.nhaarman.mockitokotlin2.mock
 import com.ziad.base.Failure
 import com.ziad.base.Success
 import com.ziad.categories.data.models.Category
