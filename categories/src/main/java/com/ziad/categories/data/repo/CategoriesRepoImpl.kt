@@ -19,11 +19,11 @@ class CategoriesRepoImpl(private val categoriesRepo: JokesCategoriesRepo) : Cate
         return categoriesRepo.insert(category = category.toEntity())
     }
 
-    override suspend fun update(category: Category) {
+    override suspend fun update(category: Category): Int {
         return categoriesRepo.update(category = category.toEntity())
     }
 
-    override suspend fun delete(category: Category) {
+    override suspend fun delete(category: Category): Int {
         return categoriesRepo.delete(category = category.toEntity())
     }
 }

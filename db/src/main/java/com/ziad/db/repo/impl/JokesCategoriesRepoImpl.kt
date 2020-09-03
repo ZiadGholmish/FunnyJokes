@@ -17,11 +17,11 @@ class JokesCategoriesRepoImpl(private val jokeCategoryDao: CategoryDao) : JokesC
         return jokeCategoryDao.insert(category)
     }
 
-    override suspend fun update(category: CategoryEntity) {
+    override suspend fun update(category: CategoryEntity): Int {
         return jokeCategoryDao.update(category)
     }
 
-    override suspend fun delete(category: CategoryEntity) {
+    override suspend fun delete(category: CategoryEntity): Int {
         return jokeCategoryDao.delete(category)
     }
 }

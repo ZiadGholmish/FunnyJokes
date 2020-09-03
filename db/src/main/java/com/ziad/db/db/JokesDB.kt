@@ -6,7 +6,7 @@ import com.ziad.db.entities.CategoryEntity
 import com.ziad.db.entities.JokeEntity
 
 const val JOKES_CATEGORIES_TABLE_NAME = "jokes_categories"
- const val JOKES_TABLE_NAME = "jokes"
+const val JOKES_TABLE_NAME = "jokes"
 internal const val JOKES_DATABASE_NAME = "circle_db"
 
 @Database(

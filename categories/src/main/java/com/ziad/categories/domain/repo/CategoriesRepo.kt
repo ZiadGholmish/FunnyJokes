@@ -6,6 +6,6 @@ interface CategoriesRepo {
     suspend fun get(id: String): List<Category>
     suspend fun getAll(): List<Category>
     suspend fun insert(category: Category)
-    suspend fun update(category: Category)
-    suspend fun delete(category: Category)
+    suspend fun update(category: Category): Int
+    suspend fun delete(category: Category): Int
 }

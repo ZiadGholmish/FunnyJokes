@@ -9,9 +9,7 @@ interface DBComponent : DbApi {
 
     @Component.Builder
     interface Builder {
-
         fun localDataModule(dbModule: DBModule): Builder
-
         fun build(): DBComponent
     }
 }
