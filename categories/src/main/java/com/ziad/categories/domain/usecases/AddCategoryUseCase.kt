@@ -19,3 +19,4 @@ class AddCategoryUseCase(
             Failure("Category is not valid")
         }
 }
+ 
